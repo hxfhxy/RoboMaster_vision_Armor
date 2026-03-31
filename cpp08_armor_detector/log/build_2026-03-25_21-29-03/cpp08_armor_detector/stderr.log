@@ -1,0 +1,18 @@
+[0mCMake Error: The current CMakeCache.txt directory /home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector/CMakeCache.txt is different than the directory /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:[m[K In constructor ‘[01m[KArmorDetector::ArmorDetector()[m[K’:
+[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:57:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdt[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   57 |     float [01;35m[Kdt[m[K = 1.0f/50.0f;
+      |           [01;35m[K^~[m[K
+[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:[m[K In member function ‘[01m[Kcpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat)[m[K’:
+[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:191:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<cv::Rect_<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  191 |     for(int i = 0; [01;35m[Ki < lightBars.size()[m[K; i++) {
+      |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:192:30:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<cv::Rect_<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  192 |         for(int j = i + 1; [01;35m[Kj < lightBars.size()[m[K; j++) {
+      |                            [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:326:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kfiltered_yaw_deg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  326 |         float [01;35m[Kfiltered_yaw_deg[m[K = ekf.x.at<float>(3, 0) * 180.0f / CV_PI; // 转回角度
+      |               [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:327:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Krotate_speed[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  327 |         float [01;35m[Krotate_speed[m[K = ekf.x.at<float>(4, 0);                      // 这个值如果大于某阈值，说明是对面在小陀螺！
+      |               [01;35m[K^~~~~~~~~~~~[m[K
