@@ -1,0 +1,6 @@
+{
+  "package_name": "cpp08_armor_detector",
+  "non_idl_tuples": [
+    "/home/hzy/ArmorDetector/src/cpp08_armor_detector:msg/ArmorTarget.msg"
+  ]
+}

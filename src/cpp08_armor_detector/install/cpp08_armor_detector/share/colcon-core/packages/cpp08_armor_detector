@@ -1,0 +1,1 @@
+ament_lint_auto:cv_bridge:opencv_viz:rclcpp:rosidl_default_runtime:sensor_msgs:std_msgs

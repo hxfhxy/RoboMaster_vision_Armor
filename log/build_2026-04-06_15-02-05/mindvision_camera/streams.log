@@ -1,0 +1,82 @@
+[0.009s] Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/ros2_mindvision_camera -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/mindvision_camera
+[0.052s] -- The C compiler identification is GNU 11.4.0
+[0.089s] -- The CXX compiler identification is GNU 11.4.0
+[0.094s] -- Detecting C compiler ABI info
+[0.145s] -- Detecting C compiler ABI info - done
+[0.149s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.149s] -- Detecting C compile features
+[0.149s] -- Detecting C compile features - done
+[0.151s] -- Detecting CXX compiler ABI info
+[0.207s] -- Detecting CXX compiler ABI info - done
+[0.211s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.211s] -- Detecting CXX compile features
+[0.212s] -- Detecting CXX compile features - done
+[0.213s] -- Found ament_cmake_auto: 1.3.14 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.303s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.413s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.416s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.421s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.427s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.436s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.461s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.462s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.522s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.539s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.567s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.572s] -- Looking for pthread.h
+[0.623s] -- Looking for pthread.h - found
+[0.624s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.676s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.676s] -- Found Threads: TRUE  
+[0.778s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.794s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.794s] -- Configured cppcheck include dirs: /home/hzy/ArmorDetector/src/ros2_mindvision_camera/mvsdk/include
+[0.794s] -- Configured cppcheck exclude dirs and/or files: 
+[0.795s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.795s] -- Added test 'lint_cmake' to check CMake code style
+[0.796s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.796s] -- Added test 'xmllint' to check XML markup files
+[0.798s] -- Configuring done
+[0.807s] -- Generating done
+[0.810s] -- Build files have been written to: /home/hzy/ArmorDetector/build/mindvision_camera
+[0.817s] Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/ros2_mindvision_camera -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/mindvision_camera
+[0.819s] Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/mindvision_camera -- -j32 -l32
+[0.857s] [ 25%] [32mBuilding CXX object CMakeFiles/mindvision_camera.dir/src/mv_camera_node.cpp.o[0m
+[0.858s] [ 50%] [32mBuilding CXX object CMakeFiles/mindvision_camera_node.dir/rclcpp_components/node_main_mindvision_camera_node.cpp.o[0m
+[3.138s] [ 75%] [32m[1mLinking CXX executable mindvision_camera_node[0m
+[3.241s] [ 75%] Built target mindvision_camera_node
+[3.457s] [100%] [32m[1mLinking CXX shared library libmindvision_camera.so[0m
+[3.558s] [100%] Built target mindvision_camera
+[3.569s] Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/mindvision_camera -- -j32 -l32
+[3.577s] Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/mindvision_camera
+[3.582s] -- Install configuration: ""
+[3.583s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/lib/mindvision_camera/mindvision_camera_node
+[3.583s] -- Set runtime path of "/home/hzy/ArmorDetector/install/mindvision_camera/lib/mindvision_camera/mindvision_camera_node" to ""
+[3.583s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/environment/library_path.sh
+[3.583s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/environment/library_path.dsv
+[3.583s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/lib/libmindvision_camera.so
+[3.584s] -- Set runtime path of "/home/hzy/ArmorDetector/install/mindvision_camera/lib/libmindvision_camera.so" to ""
+[3.584s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/config
+[3.584s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/config/camera_params.yaml
+[3.584s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/config/camera_info.yaml
+[3.584s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/launch
+[3.584s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/launch/mv_launch.py
+[3.584s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/ament_index/resource_index/package_run_dependencies/mindvision_camera
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/ament_index/resource_index/parent_prefix_path/mindvision_camera
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/environment/ament_prefix_path.sh
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/environment/ament_prefix_path.dsv
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/environment/path.sh
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/environment/path.dsv
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/local_setup.bash
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/local_setup.sh
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/local_setup.zsh
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/local_setup.dsv
+[3.585s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.dsv
+[3.586s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/ament_index/resource_index/packages/mindvision_camera
+[3.586s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/ament_index/resource_index/rclcpp_components/mindvision_camera
+[3.586s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.586s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/cmake/ament_cmake_export_libraries-extras.cmake
+[3.586s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/cmake/mindvision_cameraConfig.cmake
+[3.586s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/cmake/mindvision_cameraConfig-version.cmake
+[3.586s] -- Installing: /home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.xml
+[3.588s] Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/mindvision_camera

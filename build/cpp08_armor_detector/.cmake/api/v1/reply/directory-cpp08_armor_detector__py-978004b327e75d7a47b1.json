@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "cpp08_armor_detector__py",
+		"source" : "/home/hzy/ArmorDetector/build/cpp08_armor_detector/cpp08_armor_detector__py"
+	}
+}

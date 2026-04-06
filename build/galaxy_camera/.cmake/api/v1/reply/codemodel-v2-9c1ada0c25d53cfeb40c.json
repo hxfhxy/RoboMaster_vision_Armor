@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-a52c460dbd63dee0e138.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "galaxy_camera",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "galaxy_camera::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-galaxy_camera-7ef84a0d140d1eceff10.json",
+					"name" : "galaxy_camera",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "galaxy_camera_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-galaxy_camera_node-61b8bed1567fab632c59.json",
+					"name" : "galaxy_camera_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "galaxy_camera_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-galaxy_camera_uninstall-e42ac3e55e27b8517a4f.json",
+					"name" : "galaxy_camera_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-b8ab88efabb21a8f1765.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/hzy/ArmorDetector/build/galaxy_camera",
+		"source" : "/home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

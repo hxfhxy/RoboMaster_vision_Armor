@@ -1,0 +1,390 @@
+[0.054s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.054s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=32, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7555774274c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x75557756c820>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x75557756c820>>)
+[0.133s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.133s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.133s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.133s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.133s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.133s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.133s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hzy/ArmorDetector'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['ignore', 'ignore_ament_install']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'ignore'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'ignore_ament_install'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['colcon_pkg']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'colcon_pkg'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['colcon_meta']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'colcon_meta'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['ros']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'ros'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['cmake', 'python']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'cmake'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'python'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['python_setup_py']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'python_setup_py'
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extensions ['ignore', 'ignore_ament_install']
+[0.141s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'ros'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extensions ['cmake', 'python']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'cmake'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'python'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extensions ['python_setup_py']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/Data) by extension 'python_setup_py'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'ros'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['cmake', 'python']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'cmake'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'python'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['python_setup_py']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'python_setup_py'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/Data) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/Camera/log) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp08_armor_detector) by extension 'ros'
+[0.145s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cpp08_armor_detector' with type 'ros.ament_cmake' and name 'cpp08_armor_detector'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extensions ['ignore', 'ignore_ament_install']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extension 'ignore'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extension 'ignore_ament_install'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extensions ['colcon_pkg']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extension 'colcon_pkg'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extensions ['colcon_meta']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extension 'colcon_meta'
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extensions ['ros']
+[0.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision_ros2_galaxy_camera-master) by extension 'ros'
+[0.146s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_vision_ros2_galaxy_camera-master' with type 'ros.ament_cmake' and name 'galaxy_camera'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extensions ['ignore', 'ignore_ament_install']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extension 'ignore'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extension 'ignore_ament_install'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extensions ['colcon_pkg']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extension 'colcon_pkg'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extensions ['colcon_meta']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extension 'colcon_meta'
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extensions ['ros']
+[0.146s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_mindvision_camera) by extension 'ros'
+[0.147s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_mindvision_camera' with type 'ros.ament_cmake' and name 'mindvision_camera'
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.158s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/hzy/ArmorDetector/install/mindvision_camera' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.158s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/hzy/ArmorDetector/install/galaxy_camera' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.158s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/hzy/ArmorDetector/install/cpp08_armor_detector' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.158s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/hzy/ArmorDetector/install/mindvision_camera' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.158s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/hzy/ArmorDetector/install/galaxy_camera' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.158s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/hzy/ArmorDetector/install/cpp08_armor_detector' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.159s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/hzy/ArmorDetector/install
+[0.159s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/hzy/ArmorDetector3/install
+[0.160s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 279 installed packages in /opt/ros/humble
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'cmake_target' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'cmake_clean_cache' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'cmake_clean_first' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'cmake_force_configure' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'ament_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'catkin_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'cpp08_armor_detector' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.191s] DEBUG:colcon.colcon_core.verb:Building package 'cpp08_armor_detector' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hzy/ArmorDetector/build/cpp08_armor_detector', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hzy/ArmorDetector/install/cpp08_armor_detector', 'merge_install': False, 'path': '/home/hzy/ArmorDetector/src/cpp08_armor_detector', 'symlink_install': False, 'test_result_base': None}
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'cmake_target' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'cmake_clean_cache' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'cmake_clean_first' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'cmake_force_configure' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'ament_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'catkin_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'galaxy_camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.191s] DEBUG:colcon.colcon_core.verb:Building package 'galaxy_camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hzy/ArmorDetector/build/galaxy_camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hzy/ArmorDetector/install/galaxy_camera', 'merge_install': False, 'path': '/home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master', 'symlink_install': False, 'test_result_base': None}
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_target' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_clean_cache' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_clean_first' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_force_configure' from command line to 'False'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'ament_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'catkin_cmake_args' from command line to 'None'
+[0.191s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.191s] DEBUG:colcon.colcon_core.verb:Building package 'mindvision_camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hzy/ArmorDetector/build/mindvision_camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hzy/ArmorDetector/install/mindvision_camera', 'merge_install': False, 'path': '/home/hzy/ArmorDetector/src/ros2_mindvision_camera', 'symlink_install': False, 'test_result_base': None}
+[0.191s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.192s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.192s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hzy/ArmorDetector/src/cpp08_armor_detector' with build type 'ament_cmake'
+[0.192s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hzy/ArmorDetector/src/cpp08_armor_detector'
+[0.194s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.194s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.194s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.196s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master' with build type 'ament_cmake'
+[0.196s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master'
+[0.196s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.196s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.199s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hzy/ArmorDetector/src/ros2_mindvision_camera' with build type 'ament_cmake'
+[0.199s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hzy/ArmorDetector/src/ros2_mindvision_camera'
+[0.199s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.199s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.203s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/cpp08_armor_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/cpp08_armor_detector -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/cpp08_armor_detector
+[0.205s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/galaxy_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/galaxy_camera
+[0.208s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/ros2_mindvision_camera -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/mindvision_camera
+[1.016s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/ros2_mindvision_camera -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/mindvision_camera
+[1.017s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/mindvision_camera -- -j32 -l32
+[1.029s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/galaxy_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/galaxy_camera
+[1.030s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/galaxy_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/galaxy_camera -- -j32 -l32
+[1.691s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/cpp08_armor_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/cpp08_armor_detector -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/cpp08_armor_detector
+[1.691s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/cpp08_armor_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/cpp08_armor_detector -- -j32 -l32
+[3.767s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/mindvision_camera -- -j32 -l32
+[3.775s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/mindvision_camera
+[3.786s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mindvision_camera)
+[3.787s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/mindvision_camera
+[3.788s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera' for CMake module files
+[3.789s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera' for CMake config files
+[3.789s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'cmake_prefix_path')
+[3.789s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.ps1'
+[3.789s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.dsv'
+[3.789s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.sh'
+[3.790s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/lib'
+[3.790s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'ld_library_path_lib')
+[3.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.ps1'
+[3.790s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.dsv'
+[3.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.sh'
+[3.791s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/bin'
+[3.791s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/lib/pkgconfig/mindvision_camera.pc'
+[3.791s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/lib/python3.10/site-packages'
+[3.791s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/bin'
+[3.791s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.ps1'
+[3.792s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.dsv'
+[3.792s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.sh'
+[3.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.bash'
+[3.793s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.zsh'
+[3.794s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hzy/ArmorDetector/install/mindvision_camera/share/colcon-core/packages/mindvision_camera)
+[3.794s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mindvision_camera)
+[3.794s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera' for CMake module files
+[3.794s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera' for CMake config files
+[3.795s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'cmake_prefix_path')
+[3.795s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.ps1'
+[3.795s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.dsv'
+[3.795s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.sh'
+[3.796s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/lib'
+[3.796s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'ld_library_path_lib')
+[3.796s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.ps1'
+[3.796s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.dsv'
+[3.796s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.sh'
+[3.797s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/bin'
+[3.797s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/lib/pkgconfig/mindvision_camera.pc'
+[3.797s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/lib/python3.10/site-packages'
+[3.797s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/mindvision_camera/bin'
+[3.797s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.ps1'
+[3.797s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.dsv'
+[3.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.sh'
+[3.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.bash'
+[3.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/mindvision_camera/share/mindvision_camera/package.zsh'
+[3.798s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hzy/ArmorDetector/install/mindvision_camera/share/colcon-core/packages/mindvision_camera)
+[3.840s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/galaxy_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/galaxy_camera -- -j32 -l32
+[3.841s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/galaxy_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/galaxy_camera
+[3.864s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(galaxy_camera)
+[3.865s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera' for CMake module files
+[3.865s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/galaxy_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/galaxy_camera
+[3.865s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera' for CMake config files
+[3.865s] Level 1:colcon.colcon_core.shell:create_environment_hook('galaxy_camera', 'cmake_prefix_path')
+[3.865s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/cmake_prefix_path.ps1'
+[3.866s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/cmake_prefix_path.dsv'
+[3.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/cmake_prefix_path.sh'
+[3.866s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/lib'
+[3.866s] Level 1:colcon.colcon_core.shell:create_environment_hook('galaxy_camera', 'ld_library_path_lib')
+[3.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/ld_library_path_lib.ps1'
+[3.866s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/ld_library_path_lib.dsv'
+[3.867s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/ld_library_path_lib.sh'
+[3.867s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/bin'
+[3.867s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/lib/pkgconfig/galaxy_camera.pc'
+[3.867s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/lib/python3.10/site-packages'
+[3.867s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/bin'
+[3.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.ps1'
+[3.868s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.dsv'
+[3.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.sh'
+[3.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.bash'
+[3.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.zsh'
+[3.869s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hzy/ArmorDetector/install/galaxy_camera/share/colcon-core/packages/galaxy_camera)
+[3.869s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(galaxy_camera)
+[3.869s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera' for CMake module files
+[3.869s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera' for CMake config files
+[3.870s] Level 1:colcon.colcon_core.shell:create_environment_hook('galaxy_camera', 'cmake_prefix_path')
+[3.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/cmake_prefix_path.ps1'
+[3.870s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/cmake_prefix_path.dsv'
+[3.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/cmake_prefix_path.sh'
+[3.871s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/lib'
+[3.871s] Level 1:colcon.colcon_core.shell:create_environment_hook('galaxy_camera', 'ld_library_path_lib')
+[3.871s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/ld_library_path_lib.ps1'
+[3.871s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/ld_library_path_lib.dsv'
+[3.871s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/hook/ld_library_path_lib.sh'
+[3.872s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/bin'
+[3.872s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/lib/pkgconfig/galaxy_camera.pc'
+[3.872s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/lib/python3.10/site-packages'
+[3.872s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/galaxy_camera/bin'
+[3.872s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.ps1'
+[3.872s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.dsv'
+[3.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.sh'
+[3.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.bash'
+[3.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/galaxy_camera/share/galaxy_camera/package.zsh'
+[3.873s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hzy/ArmorDetector/install/galaxy_camera/share/colcon-core/packages/galaxy_camera)
+[9.668s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/cpp08_armor_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/cpp08_armor_detector -- -j32 -l32
+[9.669s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hzy/ArmorDetector/build/cpp08_armor_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/cpp08_armor_detector
+[9.714s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp08_armor_detector)
+[9.714s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector' for CMake module files
+[9.714s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hzy/ArmorDetector/build/cpp08_armor_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/cpp08_armor_detector
+[9.714s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector' for CMake config files
+[9.715s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp08_armor_detector', 'cmake_prefix_path')
+[9.715s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/cmake_prefix_path.ps1'
+[9.715s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/cmake_prefix_path.dsv'
+[9.715s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/cmake_prefix_path.sh'
+[9.716s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/lib'
+[9.716s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp08_armor_detector', 'ld_library_path_lib')
+[9.716s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/ld_library_path_lib.ps1'
+[9.716s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/ld_library_path_lib.dsv'
+[9.716s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/ld_library_path_lib.sh'
+[9.716s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/bin'
+[9.716s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/lib/pkgconfig/cpp08_armor_detector.pc'
+[9.716s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/lib/python3.10/site-packages'
+[9.717s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/bin'
+[9.717s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.ps1'
+[9.717s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.dsv'
+[9.717s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.sh'
+[9.717s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.bash'
+[9.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.zsh'
+[9.718s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/colcon-core/packages/cpp08_armor_detector)
+[9.718s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp08_armor_detector)
+[9.718s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector' for CMake module files
+[9.718s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector' for CMake config files
+[9.719s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp08_armor_detector', 'cmake_prefix_path')
+[9.719s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/cmake_prefix_path.ps1'
+[9.719s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/cmake_prefix_path.dsv'
+[9.719s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/cmake_prefix_path.sh'
+[9.719s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/lib'
+[9.719s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp08_armor_detector', 'ld_library_path_lib')
+[9.719s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/ld_library_path_lib.ps1'
+[9.720s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/ld_library_path_lib.dsv'
+[9.720s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/hook/ld_library_path_lib.sh'
+[9.720s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/bin'
+[9.720s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/lib/pkgconfig/cpp08_armor_detector.pc'
+[9.720s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/lib/python3.10/site-packages'
+[9.720s] Level 1:colcon.colcon_core.environment:checking '/home/hzy/ArmorDetector/install/cpp08_armor_detector/bin'
+[9.720s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.ps1'
+[9.721s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.dsv'
+[9.721s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.sh'
+[9.721s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.bash'
+[9.721s] INFO:colcon.colcon_core.shell:Creating package script '/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.zsh'
+[9.721s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hzy/ArmorDetector/install/cpp08_armor_detector/share/colcon-core/packages/cpp08_armor_detector)
+[9.722s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[9.722s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[9.722s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[9.722s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[9.725s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[9.725s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[9.725s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[9.731s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[9.731s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hzy/ArmorDetector/install/local_setup.ps1'
+[9.732s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hzy/ArmorDetector/install/_local_setup_util_ps1.py'
+[9.732s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hzy/ArmorDetector/install/setup.ps1'
+[9.733s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hzy/ArmorDetector/install/local_setup.sh'
+[9.733s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hzy/ArmorDetector/install/_local_setup_util_sh.py'
+[9.733s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hzy/ArmorDetector/install/setup.sh'
+[9.734s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hzy/ArmorDetector/install/local_setup.bash'
+[9.734s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hzy/ArmorDetector/install/setup.bash'
+[9.735s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hzy/ArmorDetector/install/local_setup.zsh'
+[9.735s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hzy/ArmorDetector/install/setup.zsh'

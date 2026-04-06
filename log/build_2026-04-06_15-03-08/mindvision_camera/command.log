@@ -1,0 +1,4 @@
+Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/hzy/ArmorDetector/build/mindvision_camera -- -j32 -l32
+Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/hzy/ArmorDetector/build/mindvision_camera -- -j32 -l32
+Invoking command in '/home/hzy/ArmorDetector/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/hzy/ArmorDetector/build/mindvision_camera
+Invoked command in '/home/hzy/ArmorDetector/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/hzy/ArmorDetector/build/mindvision_camera

@@ -1,0 +1,16 @@
+Log file created at: 2026/03/25 20:44:37
+Running on machine: hzy-ASUS-TUF-Gaming-A16-FA607PV-FA607PV
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0325 20:44:37.625703 133040 U3VControl.cpp:249] WriteAddr:268435472, BulkIn error:-7
+E0325 20:44:37.625823 133040 CameraU3VBase.cpp:555] Function:SetMediaTypeSel, Code:set_pixel_format(type), Error:-52
+E0325 20:44:38.649088 133040 U3VControl.cpp:249] WriteAddr:268435844, BulkIn error:-7
+E0325 20:44:39.675678 133040 U3VControl.cpp:249] WriteAddr:268435568, BulkIn error:-7
+E0325 20:44:39.675786 133040 CameraU3VBase.cpp:1726] Function:SetStrobeMode, Code:set_strobe_mode(iMode), Error:-52
+E0325 20:44:40.698060 133040 U3VControl.cpp:249] WriteAddr:268435584, BulkIn error:-7
+E0325 20:44:40.698135 133040 CameraU3VBase.cpp:2419] Function:SetHDFlip, Code:set_flip_ctrl(uMirrSet), Error:-52
+E0325 20:44:41.738684 133040 U3VControl.cpp:249] WriteAddr:268435508, BulkIn error:-7
+E0325 20:44:41.738732 133040 CameraU3VBase.cpp:395] Function:SetExpTime, Code:set_exposure_time((float)fExpTime), Error:-52
+E0325 20:44:42.768949 133040 U3VControl.cpp:249] WriteAddr:268435460, BulkIn error:-7
+E0325 20:44:42.768989 133040 CameraU3VBase.cpp:782] Function:PauseVideo, Code:set_acquisition_command(0), Error:-52
+E0325 20:44:43.801373 133040 U3VControl.cpp:249] WriteAddr:268435460, BulkIn error:-7
+E0325 20:44:43.801429 133040 CameraU3VBase.cpp:787] Function:PauseVideo, Code:set_acquisition_command(1), Error:-52

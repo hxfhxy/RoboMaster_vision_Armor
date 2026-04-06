@@ -1,0 +1,5 @@
+Log file created at: 2026/04/01 21:35:30
+Running on machine: hzy-ASUS-TUF-Gaming-A16-FA607PV-FA607PV
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0401 21:35:30.286881 31073 U3VControl.cpp:249] WriteAddr:268435460, BulkIn error:-7
+E0401 21:35:30.286983 31073 CameraU3VBase.cpp:782] Function:PauseVideo, Code:set_acquisition_command(0), Error:-52

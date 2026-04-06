@@ -1,0 +1,11 @@
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/uninstall.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/galaxy_camera_uninstall.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/galaxy_camera.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/galaxy_camera_node.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/test.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/edit_cache.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/rebuild_cache.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/list_install_components.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/install.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/install/local.dir
+/home/hzy/下载/camera/rm_vision_ros2_galaxy_camera-master/build/galaxy_camera/CMakeFiles/install/strip.dir
