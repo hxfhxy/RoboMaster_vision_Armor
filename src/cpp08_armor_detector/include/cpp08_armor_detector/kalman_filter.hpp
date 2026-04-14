@@ -2,59 +2,53 @@
 #define KALMAN_FILTER_HPP
 
 #include <opencv2/opencv.hpp>
+#include <cmath>
 
-class MyKalmanFilter {
+#include <opencv2/opencv.hpp>
+#include <cmath>
+
+// 装甲板扩展卡尔曼滤波器（EKF）类：用于平滑目标位姿，抑制抖动
+class ArmorEKF {
 public:
-    cv::Mat x, P, F, Q, H, R, I;
-
-    // 状态数=2 [角度, 角速度], 测量数=1 [角度]
-    MyKalmanFilter(int stateNum = 2, int measureNum = 1) {
-        x = cv::Mat::zeros(stateNum, 1, CV_32F);
-        P = cv::Mat::eye(stateNum, stateNum, CV_32F);
-        
-        // 1. 状态转移矩阵 F: x_new = x + v*dt
-        // 设 dt = 0.02 
-        float dt = 0.02;
-        F = (cv::Mat_<float>(2, 2) << 1, dt, 
-                                      0, 1);
-
-        // 2. 过程噪声 Q: 对预测模型的信任程度 
-        Q = (cv::Mat_<float>(2, 2) << 0.01, 0, 
-                                      0,    0.01);
-
-        // 3. 测量矩阵 H: 只测量位置，不测量速度
-        H = (cv::Mat_<float>(1, 2) << 1, 0);
-
-        // 4. 测量噪声 R: 对视觉识别结果的信任程度 
-        R = cv::Mat::eye(measureNum, measureNum, CV_32F) * 0.5;
-        
-        I = cv::Mat::eye(stateNum, stateNum, CV_32F);
-    }
-
-    void predict() {
-        x = F * x;
-        P = F * P * F.t() + Q;
-    }
-
-    void correct(cv::Mat z) {
-    // 1. 先计算预测的测量值 (Hx) 并存入临时变量
-    cv::Mat prediction = H * x; 
-
-    float diff = z.at<float>(0, 0) - prediction.at<float>(0, 0);
+    // 状态量 X (6维): [xc, vxc, yc, vyc, yaw, za]
+    // xc: 机器人中心x坐标, vxc: x方向速度
+    // yc: 机器人中心y坐标, vyc: y方向速度
+    // yaw: 目标偏航角, za: 目标z坐标（深度）
+    cv::Mat x; 
     
-    // 3. 处理角度环跳变 
-    if (diff > 180.0) diff -= 360.0;
-    else if (diff < -180.0) diff += 360.0;
-
-    // 4. 标准卡尔曼更新步骤
-    cv::Mat S = H * P * H.t() + R;
-    cv::Mat K = P * H.t() * S.inv();
+    // 协方差矩阵 P (6x6)：表示状态量的不确定性
+    cv::Mat P;
     
-    // 5. 更新状态
-    cv::Mat innovation = (cv::Mat_<float>(1, 1) << diff);
-    x = x + K * innovation;
-    P = (I - K * H) * P;
-  }
+    // 过程噪声 Q (6x6)：表示模型预测的误差（重点调参对象）
+    cv::Mat Q;
+    
+    // 观测噪声 R (4x4)：表示传感器观测的误差（重点调参对象）
+    cv::Mat R;
+    
+    // 单位矩阵 I (6x6)
+    cv::Mat I;
+
+    // 固定参数：机器人中心到装甲板的旋转半径（单位：米，根据实际尺寸调整）
+    const double r; 
+
+    // 构造函数：初始化EKF的所有矩阵
+    ArmorEKF();
+
+    // 1. 初始化 EKF (第一次看到装甲板时调用)
+    void init(const cv::Mat& tvec, double yaw_rad);
+
+    // 2. 预测步 (每帧必做，匀速运动模型)
+    void predict(double dt);
+
+    // 3. 更新步 (看到装甲板时才做)
+    void update(const cv::Mat& tvec, double yaw_rad);
+
+    // 4. 获取滤波后的装甲板预测位置 (发给电控前用)
+    void getPredictedArmor(cv::Mat& out_tvec, double& out_yaw);
+
+private:
+    // 工具函数: 归一化角度到 [-pi, pi]
+    void normalizeYaw(double& yaw);
 };
 
-#endif
+#endif // ARMOR_EKF_HPP

@@ -22,11 +22,6 @@
         objectPoints.push_back(cv::Point3f( half_x, -half_y, 0.0f)); // 3. 右下 (x正, y负)
         objectPoints.push_back(cv::Point3f( half_x,  half_y, 0.0f)); // 4. 右上 (x正, y正)
 
-        // 卡尔曼滤波器（yaw 角度+角速度），初始化状态转移矩阵 F 和观测矩阵 H
-        float dt = 1.0f / 50.0f;
-        kf.F = (cv::Mat_<float>(2, 2) << 1, dt,
-                                        0, 1);
-        kf.H = (cv::Mat_<float>(1, 2) << 1, 0);
     }
 
     

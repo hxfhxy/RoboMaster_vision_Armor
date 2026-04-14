@@ -74,6 +74,7 @@ add_executable(detect_node
   src/armor_detector_tracking.cpp
   src/uart_protocol.cpp 
   src/uart_work.cpp
+  src/armor_ekf.cpp
 )
 
 ament_target_dependencies(detect_node 

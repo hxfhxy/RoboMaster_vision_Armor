@@ -1,6 +1,7 @@
 #ifndef ARMOR_DETECTOR_HPP
 #define ARMOR_DETECTOR_HPP
 
+#include <opencv2/dnn.hpp>
 #include "kalman_filter.hpp"
 #include "armor_detector_lightbar.hpp"
 #include "armor_detector_matching.hpp"
@@ -11,11 +12,12 @@
 
 class ArmorDetector {
 public:
-    // ================== 【新增】绝对角度计算相关函数 ==================
+    // 新增：加载 ONNX 模型
+    void loadModel(const std::string& model_path);
+
     void setGimbalCurrent(float yaw_current, float pitch_current);
     float getTargetYaw() { return target_yaw_; }
     float getTargetPitch() { return target_pitch_; }
-    // ================================================================
 
     bool initUART(const char* device = "/dev/ttyUSB0", int baud = 115200);
     
@@ -32,14 +34,16 @@ public:
     // 装甲板物理坐标
     std::vector<cv::Point3f> objectPoints;
     // 卡尔曼滤波器
-    MyKalmanFilter kf{2, 1};
+    ArmorEKF ekf;
+    //标记是否初始化过 EKF
+    bool ekf_initialized = false;
     // 滤波数据缓存
     std::deque<float> rawYawList, filteredYawList;
 
     // 目标颜色设定：0 代表蓝色，1 代表红色
     int enemy_color = 0;   
 
-    //find_robot_center相关成员 
+    //find_robot_center相关成员     
     struct CenterFit {
         cv::Point3f position;
         cv::Point3f normalvector;
@@ -55,12 +59,10 @@ public:
     // 构造函数
     ArmorDetector();
 
-    // ================== 【只保留这一组外参参数】 ==================
     double YAW_OFFSET = 0.0;
     double PITCH_OFFSET = 0.0;
     bool IS_YAW_REVERSED = false;
     bool IS_PITCH_REVERSED = false;
-    // ==============================================================
 
     // 图像预处理
     cv::Mat preprocess(cv::Mat img);
@@ -75,15 +77,19 @@ public:
     void find_robot_center();
 
 private:
-    // ================== 【新增】绝对角度计算成员变量（移到private） ==================
+    //绝对角度计算成员变量
     float gimbal_yaw_current_ = 0.0f;
     float gimbal_pitch_current_ = 0.0f;
     float target_yaw_ = 0.0f;
     float target_pitch_ = 0.0f;
-    const float PITCH_MIN = -30.0f;
-    const float PITCH_MAX = 30.0f;
+    // const float PITCH_MIN = -42.0f;
+    // const float PITCH_MAX = 42.0f;
     const float BULLET_SPEED = 15.0f;
-    // ========================================================================
+
+    cv::dnn::Net net_; // 神经网络对象
+    
+    // 新增：数字分类逻辑
+    void classifyArmors(const cv::Mat& src, std::vector<DetectedArmor>& armors);
 };
 
 #endif // ARMOR_DETECTOR_HPP

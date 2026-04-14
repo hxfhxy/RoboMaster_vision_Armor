@@ -5,7 +5,7 @@ void ArmorDetector::drawYawPlot()
 {
     cv::Mat plot = cv::Mat::zeros(400, 800, CV_8UC3);
     cv::line(plot, cv::Point(0, 200), cv::Point(800, 200), cv::Scalar(100, 100, 100), 1);
-    float scale = 1;
+    float scale = 20;
     for (size_t i = 1; i < filteredYawList.size(); i++)
     {
         int x = i * 2;

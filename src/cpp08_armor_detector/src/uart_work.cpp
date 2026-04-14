@@ -2,26 +2,41 @@
 
 // 初始化串口
 bool RoboMasterUART::init(const char* device, int baud) {
-    fd = open(device, O_RDWR | O_NOCTTY | O_NONBLOCK);
+    // 增加O_EXCL独占打开，防止多进程占用
+    fd = open(device, O_RDWR | O_NOCTTY | O_NONBLOCK | O_EXCL);
     if (fd == -1) {
-        std::cerr << "无法打开串口: " << device << std::endl;
-        perror("");
+        std::cerr << "无法打开串口: " << device << "（可能被占用）" << std::endl;
+        perror("open");
         return false;
     }
+
     struct termios options;
     tcgetattr(fd, &options);
-    // 设置波特率
+
+    //闭终端回显、规范模式、输出处理
+    options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG); // 关闭规范模式/回显/信号
+    options.c_oflag &= ~OPOST;                          // 关闭输出字节修改
+    options.c_iflag &= ~(IXON | IXOFF | IXANY);         // 关闭流控
+
+    // 波特率 + 8N1 配置（原有逻辑保留）
     cfsetispeed(&options, baud);
     cfsetospeed(&options, baud);
-    // 8N1 配置（8位数据、无校验、1位停止位）
     options.c_cflag &= ~PARENB;
     options.c_cflag &= ~CSTOPB;
     options.c_cflag &= ~CSIZE;
     options.c_cflag |= CS8;
-    // 激活配置
+
+    // 非规范模式读取配置（提升稳定性）
+    options.c_cc[VMIN] = 0;    // 读取不等待最小字节数
+    options.c_cc[VTIME] = 10;  // 超时100ms（单位：0.1s）
+
+    // 激活配置 + 清空缓冲区
     tcsetattr(fd, TCSANOW, &options);
+    tcflush(fd, TCIOFLUSH);
+
     return true;
 }
+
 
 // 发送数据到电控 
 bool RoboMasterUART::send(Manifold_UART_Rx_Data &data) {

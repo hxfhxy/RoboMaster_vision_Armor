@@ -19,6 +19,8 @@ struct DetectedArmor {
     std::pair<int, int> light_bar_ids;          // 配对的灯条索引 (i, j)
     cv::Mat tvec;
     cv::Mat rvec; 
+    int number = -1;             // 识别到的数字 (1-5, 哨兵, 基地等)
+    float class_confidence = 0.0f; // 类别置信度
 };
 
 /**
