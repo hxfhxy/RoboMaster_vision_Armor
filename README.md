@@ -7,6 +7,12 @@
 
 感谢： 感谢原作者在 RoboMaster 视觉算法上的开源贡献。
 
+鸣谢 
+
+    本项目的视觉识别框架参考了 Chen Jun 的开源项目 [rm_auto_aim](https://github.com/chenjunnn/rm_auto_aim.git)。
+
+    特别感谢陈君大佬对 RoboMaster 算法开源生态的贡献。
+
 # cpp08_armor_detector - ROS2 装甲板识别系统
 
 ![C++](https://img.shields.io/badge/C%2B%2B-17-blue) ![ROS2](https://img.shields.io/badge/ROS2-Humble-green) ![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-red)
@@ -31,6 +37,7 @@ cpp08_armor_detector/
 ├── src/                          # 源代码目录
 │   ├── camera_node.cpp           # 图像采集节点
 │   ├── detect_node.cpp           # 识别处理节点
+|   |—— armor_ekf.cpp             # ekf处理数据
 │   ├── armor_detector.cpp        # 核心识别算法
 │   ├── armor_detector_*.cpp      # 模块化算法实现
 │   │   ├── armor_detector_preprocess.cpp      # 预处理（HSV、形态学）
