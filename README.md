@@ -7,11 +7,9 @@
 
 感谢： 感谢原作者在 RoboMaster 视觉算法上的开源贡献。
 
-鸣谢 
+本项目的视觉识别框架参考了 Chen Jun 的开源项目 (https://github.com/chenjunnn/rm_auto_aim.git)。
 
-    本项目的视觉识别框架参考了 Chen Jun 的开源项目 [rm_auto_aim](https://github.com/chenjunnn/rm_auto_aim.git)。
-
-    特别感谢陈君大佬对 RoboMaster 算法开源生态的贡献。
+特别感谢陈君大佬对 RoboMaster 算法开源生态的贡献。
 
 # cpp08_armor_detector - ROS2 装甲板识别系统
 
