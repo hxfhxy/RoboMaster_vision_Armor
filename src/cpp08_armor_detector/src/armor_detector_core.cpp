@@ -4,6 +4,90 @@
 #include "cpp08_armor_detector/armor_detector_matching.hpp"
 
 /**
+ * @brief 根据单块装甲板推导并绘制全部4块装甲板
+ * @param img 原图
+ * @param armor 当前检测到的装甲板（需包含有效的 tvec, rvec）
+ * @param radius 机器人半径 
+ */
+void ArmorDetector::drawFourArmorsFromOne(cv::Mat& img, const cv::Point3f& robot_center, double yaw_rad, float radius) {
+    // 1. 定义局部角点和颜色（和原来一样）
+    float half_w = robot_geom_.armor_width / 2.0f;
+    float half_h = robot_geom_.armor_height / 2.0f;
+    std::vector<cv::Point3f> local_corners = {
+        {-half_w,  half_h, 0}, // 左下
+        {-half_w, -half_h, 0}, // 左上
+        { half_w, -half_h, 0}, // 右上
+        { half_w,  half_h, 0}  // 右下
+    };
+    std::vector<cv::Scalar> colors = {
+        cv::Scalar(0, 255, 0),   // 0号当前: 绿
+        cv::Scalar(255, 0, 0),   // 1号右侧: 蓝
+        cv::Scalar(0, 0, 255),   // 2号后方: 红
+        cv::Scalar(255, 255, 0)  // 3号左侧: 青
+    };
+
+    // 2. 显式定义零旋转和平移向量
+    cv::Mat rvec_zero = cv::Mat::zeros(3, 1, CV_64F);
+    cv::Mat tvec_zero = cv::Mat::zeros(3, 1, CV_64F);
+
+    // 3. 循环绘制4块装甲板
+    for (int i = 1; i < 4; i++) {
+        double plate_yaw = yaw_rad + i * CV_PI / 2.0;
+        
+        // 计算这块装甲板的中心（从机器人中心向外推）
+        cv::Point3f plate_center;
+        plate_center.x = robot_center.x + radius * sin(plate_yaw);
+        plate_center.y = robot_center.y; // 绕Y轴转，Y不变
+        plate_center.z = robot_center.z - radius * cos(plate_yaw);
+
+        // 构建旋转矩阵（绕Y轴转plate_yaw）
+        cv::Mat plate_R = cv::Mat::eye(3, 3, CV_64F);
+        double c = cos(plate_yaw);
+        double s = sin(plate_yaw);
+        plate_R.at<double>(0, 0) = c;
+        plate_R.at<double>(0, 2) = s;
+        plate_R.at<double>(2, 0) = -s;
+        plate_R.at<double>(2, 2) = c;
+
+        // 计算角点在相机坐标系下的坐标
+        std::vector<cv::Point3f> corners_cam;
+        for (const auto& pt : local_corners) {
+            cv::Mat pt_mat = (cv::Mat_<double>(3,1) << pt.x, pt.y, pt.z);
+            cv::Mat pt_rot = plate_R * pt_mat;
+            corners_cam.emplace_back(
+                plate_center.x + pt_rot.at<double>(0),
+                plate_center.y + pt_rot.at<double>(1),
+                plate_center.z + pt_rot.at<double>(2)
+            );
+        }
+
+        // 重投影到图像
+        std::vector<cv::Point2f> corners_img;
+        cv::projectPoints(corners_cam, rvec_zero, tvec_zero,
+                          cameraMatrix, distCoeffs, corners_img);
+
+        // 绘制边框
+        if (corners_img.size() == 4) {
+            for (int j = 0; j < 4; j++) {
+                cv::line(img, corners_img[j], corners_img[(j+1)%4], colors[i], 2);
+            }
+            cv::putText(img, "Plate " + std::to_string(i), corners_img[1] + cv::Point2f(0, -10),
+                        cv::FONT_HERSHEY_SIMPLEX, 0.5, colors[i], 2);
+        }
+    }
+
+    // 绘制机器人中心（白色圆点）
+    std::vector<cv::Point2f> center_2d;
+    cv::projectPoints(std::vector<cv::Point3f>{robot_center}, rvec_zero, tvec_zero,
+                      cameraMatrix, distCoeffs, center_2d);
+    if (!center_2d.empty()) {
+        cv::circle(img, center_2d[0], 5, cv::Scalar(255, 255, 255), -1);
+    }
+}
+
+
+
+/**
  * @brief 设置当前云台的yaw和pitch角度
  * @param yaw_current 云台当前yaw角（水平角度）
  * @param pitch_current 云台当前pitch角（垂直角度）
@@ -168,10 +252,9 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img)
         best_pnp_corners = best_armor.pnp_corners;
         
         // ===================== EKF 卡尔曼滤波核心逻辑 =====================
-        // 角度转弧度
-        double bestYaw_rad = best_armor.yaw * CV_PI / 180.0;
-
-        if (!ekf_initialized) {
+        double bestYaw_rad = -best_armor.armor_yaw_rad; 
+        //std::cout<<"Best Armor Yaw (rad): " << bestYaw_rad<< std::endl;
+        if (!ekf_initialized) { 
             // 首次检测到目标：初始化EKF
             ekf.init(best_armor.tvec, bestYaw_rad);
             ekf_initialized = true;
@@ -190,6 +273,7 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img)
         // ===================== 滤波后数据计算 =====================
         // 滤波后yaw角（角度制）
         double filtered_yaw = std::atan2(tvec_pred.at<double>(0), tvec_pred.at<double>(2)) * 180.0 / CV_PI;
+        filtered_yaw = -filtered_yaw; // 取反：目标在右，Yaw减小 
         // 滤波后pitch角（角度制）
         double filtered_pitch = std::atan2(-tvec_pred.at<double>(1), tvec_pred.at<double>(2)) * 180.0 / CV_PI;
         // 滤波后目标距离
@@ -198,10 +282,48 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img)
         double raw_yaw = std::atan2(best_armor.tvec.at<double>(0), best_armor.tvec.at<double>(2)) * 180.0 / CV_PI;
         double raw_pitch = std::atan2(-best_armor.tvec.at<double>(1), best_armor.tvec.at<double>(2)) * 180.0 / CV_PI;
 
+        double ekf_xc = ekf.x.at<double>(0, 0);
+        double ekf_yc = ekf.x.at<double>(2, 0);
+        double ekf_za = ekf.x.at<double>(4, 0); 
+        cv::Point3f ekf_robot_center(ekf_xc, ekf_yc, ekf_za);   
+
+        // ===================== 绘制EKF预测的装甲板 =====================
+        // 1. 绘制预测装甲板的中心圆点（黄色实心）
+        cv::Mat rvec_zero = cv::Mat::zeros(3, 1, CV_64F);
+        cv::Mat tvec_zero = cv::Mat::zeros(3, 1, CV_64F);   
+        std::vector<cv::Point2f> pred_armor_2d;
+        cv::projectPoints(
+            std::vector<cv::Point3f>{cv::Point3f(tvec_pred.at<double>(0), tvec_pred.at<double>(1), tvec_pred.at<double>(2))},
+            rvec_zero, tvec_zero, cameraMatrix, distCoeffs, pred_armor_2d
+        );
+        if (!pred_armor_2d.empty()) {
+            // 预测点：黄色实心圆（半径6）
+            cv::circle(img, pred_armor_2d[0], 6, cv::Scalar(0, 255, 255), -1);
+            // 标注"Pred Armor"文字
+            cv::putText(img, "Pred Armor", pred_armor_2d[0] + cv::Point2f(10, 10),
+                        cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(0, 255, 255), 2);
+        }
+        std::vector<cv::Point2f> robot_center_2d;
+        cv::projectPoints(
+            std::vector<cv::Point3f>{ekf_robot_center},
+            rvec_zero, tvec_zero, cameraMatrix, distCoeffs, robot_center_2d
+        );
+        if (!robot_center_2d.empty()) {
+            // 整车中心：白色实心圆（半径8，比装甲板点大，更显眼）
+            cv::circle(img, robot_center_2d[0], 8, cv::Scalar(255, 255, 255), -1);
+            // 画一个黑色边框，让白色点在任何背景下都清晰
+            cv::circle(img, robot_center_2d[0], 8, cv::Scalar(0, 0, 0), 2);
+            // 标注文字
+            cv::putText(img, "Robot Center", robot_center_2d[0] + cv::Point2f(10, -10),
+                        cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255, 255, 255), 2);
+        }
+
+
 
         // ===================== 计算最终云台控制角度 =====================
         // 目标yaw = 云台当前yaw + 滤波后偏差 + 手动偏移量
         target_yaw_ = gimbal_yaw_current_ + filtered_yaw + YAW_OFFSET;
+        target_yaw_ = -target_yaw_; // 取反：目标在右，Yaw减小
         // 目标pitch = 云台当前pitch + 滤波后偏差 + 手动偏移量
         target_pitch_ = gimbal_pitch_current_ + filtered_pitch + PITCH_OFFSET;
 
@@ -255,6 +377,8 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img)
             cv::line(img, final_armor_corners[k], final_armor_corners[(k+1)%4], cv::Scalar(0, 0, 255), 3);
         }
 
+        //drawFourArmorsFromOne(img, ekf_robot_center, yaw_pred_rad, robot_geom_.armor_plate_distance);
+
         // ===================== 调试文字绘制：原始值 & 滤波后值 =====================
         rawYawList.push_back((float)bestYaw);
         filteredYawList.push_back((float)filtered_yaw);
@@ -270,35 +394,35 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img)
                 bestYaw, bestPitch, bestDist, filtered_yaw, filtered_pitch);
         cv::putText(img, text_buf, text_pos, cv::FONT_HERSHEY_SIMPLEX, 0.4, cv::Scalar(255, 255, 0), 1);
         
-        // ===================== 机器人几何中心拟合：多帧装甲板法向量拟合中心 =====================
-        CenterFit fit;
-        fit.position = cv::Point3f(
-            best_armor.tvec.at<double>(0, 0),
-            best_armor.tvec.at<double>(1, 0),
-            best_armor.tvec.at<double>(2, 0));
-        // 旋转向量转旋转矩阵
-        cv::Mat rot_mat;
-        cv::Rodrigues(best_armor.rvec, rot_mat);
-        // 计算装甲板法向量（正面朝向）
-        cv::Point3f normal_vector(
-            rot_mat.at<double>(0, 2),
-            rot_mat.at<double>(1, 2),
-            rot_mat.at<double>(2, 2)
-        );
-        fit.normalvector = normal_vector;
+        // // ===================== 机器人几何中心拟合：多帧装甲板法向量拟合中心 =====================
+        // CenterFit fit;
+        // fit.position = cv::Point3f(
+        //     best_armor.tvec.at<double>(0, 0),
+        //     best_armor.tvec.at<double>(1, 0),
+        //     best_armor.tvec.at<double>(2, 0));
+        // // 旋转向量转旋转矩阵
+        // cv::Mat rot_mat;
+        // cv::Rodrigues(best_armor.rvec, rot_mat);
+        // // 计算装甲板法向量（正面朝向）
+        // cv::Point3f normal_vector(
+        //     rot_mat.at<double>(0, 2),
+        //     rot_mat.at<double>(1, 2),
+        //     rot_mat.at<double>(2, 2)
+        // );
+        // fit.normalvector = normal_vector;
 
-        // 加入历史列表
-        center_fits.push_back(fit);
-        // 限制列表最大长度50
-        if (center_fits.size() > 50) center_fits.erase(center_fits.begin());
+        // // 加入历史列表
+        // center_fits.push_back(fit);
+        // // 限制列表最大长度50
+        // if (center_fits.size() > 50) center_fits.erase(center_fits.begin());
 
-        // 拟合机器人中心并绘制
-        find_robot_center();
-        if (find_center && !center_2d.empty()) {
-            cv::circle(img, center_2d[0], 8, cv::Scalar(0, 255, 255), -1);
-            cv::putText(img, "Geo Center", center_2d[0] + cv::Point2f(10, 10), 
-                        cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(0, 255, 255), 2);
-        }
+        // // 拟合机器人中心并绘制
+        // find_robot_center();
+        // if (find_center && !center_2d.empty()) {
+        //     cv::circle(img, center_2d[0], 8, cv::Scalar(0, 255, 255), -1);
+        //     cv::putText(img, "Geo Center", center_2d[0] + cv::Point2f(10, 10), 
+        //     cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(0, 255, 255), 2);
+        // }
     }
     else
     {

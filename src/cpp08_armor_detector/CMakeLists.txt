@@ -22,6 +22,9 @@ find_package(OpenCV REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 # ==================== 2. 编译自定义消息 (ArmorTarget.msg) ====================
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -83,6 +86,9 @@ ament_target_dependencies(detect_node
   cv_bridge 
   OpenCV 
   std_msgs
+  tf2_ros
+  tf2_geometry_msgs
+  geometry_msgs
 )
 
 target_link_libraries(detect_node Eigen3::Eigen)

@@ -5,6 +5,7 @@
     // 构造函数：初始化相机内参、畸变系数、装甲板物理坐标、卡尔曼滤波参数
     ArmorDetector::ArmorDetector()
     {
+
         // 相机内参 (fx, fy, cx, cy)
         cameraMatrix = (cv::Mat_<double>(3, 3) << 2374.54248, 0, 698.85288,
                                                 0, 2377.53648, 520.8649,
@@ -22,6 +23,7 @@
         objectPoints.push_back(cv::Point3f( half_x, -half_y, 0.0f)); // 3. 右下 (x正, y负)
         objectPoints.push_back(cv::Point3f( half_x,  half_y, 0.0f)); // 4. 右上 (x正, y正)
 
+        
     }
 
     

@@ -1,4 +1,0 @@
-Log file created at: 2026/04/01 21:35:10
-Running on machine: hzy-ASUS-TUF-Gaming-A16-FA607PV-FA607PV
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-W0401 21:35:10.024467 30960 MVCameraBase.cpp:100] Device:(name:MV-SUA134GC#0 sn:042162020049)Lost

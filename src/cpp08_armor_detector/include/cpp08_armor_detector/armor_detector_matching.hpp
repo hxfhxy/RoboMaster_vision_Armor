@@ -21,6 +21,7 @@ struct DetectedArmor {
     cv::Mat rvec; 
     int number = -1;             // 识别到的数字 (1-5, 哨兵, 基地等)
     float class_confidence = 0.0f; // 类别置信度
+    double armor_yaw_rad = 0.0; //装甲板自身的朝向角
 };
 
 /**

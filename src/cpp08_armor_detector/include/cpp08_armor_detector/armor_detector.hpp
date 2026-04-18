@@ -29,6 +29,20 @@ public:
     static constexpr int COLOR_DIFF_THRESH = 15;
     static constexpr int BRIGHTNESS_THRESH = 30;
 
+    // 在 ArmorDetector 类中添加
+    struct RobotGeometry {
+        double armor_plate_distance; // 相邻装甲板中心之间的距离 (mm)，根据实际机器人测量
+        double armor_width;           // 单块装甲板的宽度 (mm)，你已经有了：135mm
+        double armor_height;          // 单块装甲板的高度 (mm)，你已经有了：55mm
+    };
+
+    RobotGeometry robot_geom_ = {
+        260.0, // 假设机器人中心到装甲板中心的距离是300mm (根据实际调整)
+        135.0,
+        55.0
+    };
+
+
     // 相机参数
     cv::Mat cameraMatrix, distCoeffs;   
     // 装甲板物理坐标
@@ -39,6 +53,9 @@ public:
     bool ekf_initialized = false;
     // 滤波数据缓存
     std::deque<float> rawYawList, filteredYawList;
+
+    void drawFourArmorsFromOne(cv::Mat& img, const cv::Point3f& robot_center, double yaw_rad, float radius);
+
 
     // 目标颜色设定：0 代表蓝色，1 代表红色
     int enemy_color = 0;   
@@ -76,14 +93,14 @@ public:
     // find_robot_center成员函数声明
     void find_robot_center();
 
+    
+
 private:
     //绝对角度计算成员变量
     float gimbal_yaw_current_ = 0.0f;
     float gimbal_pitch_current_ = 0.0f;
     float target_yaw_ = 0.0f;
     float target_pitch_ = 0.0f;
-    // const float PITCH_MIN = -42.0f;
-    // const float PITCH_MAX = 42.0f;
     const float BULLET_SPEED = 15.0f;
 
     cv::dnn::Net net_; // 神经网络对象

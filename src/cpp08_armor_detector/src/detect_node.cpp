@@ -49,7 +49,7 @@ public:
         RCLCPP_INFO(this->get_logger(), "识别节点已启动");
         cv::namedWindow("Armor Detect", cv::WINDOW_NORMAL);
     }
-
+    
 private:
     // 图像订阅者
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr img_sub_;

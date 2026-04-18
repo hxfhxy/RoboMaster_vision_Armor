@@ -1,6 +1,0 @@
-Invoking command in '/home/hzy/ArmorDetector/build/galaxy_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/galaxy_camera
-Invoked command in '/home/hzy/ArmorDetector/build/galaxy_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/src/rm_vision_ros2_galaxy_camera-master -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/install/galaxy_camera
-Invoking command in '/home/hzy/ArmorDetector/build/galaxy_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/galaxy_camera -- -j32 -l32
-Invoked command in '/home/hzy/ArmorDetector/build/galaxy_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/build/galaxy_camera -- -j32 -l32
-Invoking command in '/home/hzy/ArmorDetector/build/galaxy_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/galaxy_camera
-Invoked command in '/home/hzy/ArmorDetector/build/galaxy_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/build/galaxy_camera

@@ -193,13 +193,31 @@ void calculatePnP(DetectedArmor& armor, const cv::Mat& cameraMatrix, const cv::M
         double distance = std::sqrt(x*x + y*y + z*z);
 
         // 弧度转角度，存入装甲板对象
-        armor.yaw = delta_yaw_rad * 180.0 / CV_PI;   // 取反：目标在右，Yaw减小
+        armor.yaw = -delta_yaw_rad * 180.0 / CV_PI;   // 取反：目标在右，Yaw减小
         armor.pitch = delta_pitch_rad * 180.0 / CV_PI; 
+
+        // ===================== 3. 【关键新增】计算【EKF几何模型用的自身朝向角】 =====================
+        // 把 OpenCV 旋转向量 rvec 转成旋转矩阵
+        cv::Mat rot_mat;
+        cv::Rodrigues(rvec, rot_mat);
+        
+        // 从旋转矩阵中提取绕 Y 轴的旋转角（yaw）
+        // 公式：yaw = atan2(R(0,2), R(2,2))
+        // 注意：这里的符号必须和你 EKF 里的 sin/cos 匹配！
+        double extracted_yaw = std::atan2(rot_mat.at<double>(0, 2), rot_mat.at<double>(2, 2));
+        
+        // 【重要】根据你的几何模型调整符号
+        // 如果发现整车中心方向反了，把下面这行的注释去掉：
+        // extracted_yaw = -extracted_yaw; 
+        
+        // 赋值给新增的成员（给 EKF 用）
+        armor.armor_yaw_rad = extracted_yaw;
 
     }else{
         // PnP解算失败，将距离、角度置零
         armor.distance = 0;
         armor.yaw = 0;
         armor.pitch = 0;    
+        armor.armor_yaw_rad = 0;
     }
 }
