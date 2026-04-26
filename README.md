@@ -11,110 +11,29 @@
 
 特别感谢陈君大佬对 RoboMaster 算法开源生态的贡献。
 
-# cpp08_armor_detector - ROS2 装甲板识别系统
+# ArmorDetector4
 
-![C++](https://img.shields.io/badge/C%2B%2B-17-blue) ![ROS2](https://img.shields.io/badge/ROS2-Humble-green) ![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-red)
+基于 ROS2 Humble 的装甲板视觉识别系统。使用 OpenCV DNN 和传统计算机视觉算法进行灯条检测和装甲板匹配，通过 PnP 算法解算姿态，并与电控系统通信。
 
-## 📖 项目概述
+## 依赖项
 
-`cpp08_armor_detector` 是一个基于 ROS2 Humble 的装甲板视觉识别系统，集成了图像采集、算法识别、姿态估计和电控通信等功能模块。
+- ROS2 Humble
+- OpenCV 4.5+
+- cv_bridge, rclcpp, sensor_msgs 等 ROS2 包
 
-### 核心功能
-- 🎥 **实时图像采集**：支持本地视频、USB相机、迈德威视工业相机等多种图像源
-- 🎯 **装甲板识别**：基于灯条匹配和颜色识别的高鲁棒性算法
-- 📐 **3D姿态估计**：使用PnP算法解算偏航角、俯仰角和距离
-- 🔄 **卡尔曼滤波**：平滑角度数据，降低抖动
-- 📡 **串口通信**：与电控系统实时交互，发送识别结果
+## 使用
 
----
-
-## 📁 项目结构
-
+### 启动工业相机检测
 ```
-cpp08_armor_detector/
-├── src/                          # 源代码目录
-│   ├── camera_node.cpp           # 图像采集节点
-│   ├── detect_node.cpp           # 识别处理节点
-|   |—— armor_ekf.cpp             # ekf处理数据
-│   ├── armor_detector.cpp        # 核心识别算法
-│   ├── armor_detector_*.cpp      # 模块化算法实现
-│   │   ├── armor_detector_preprocess.cpp      # 预处理（HSV、形态学）
-│   │   ├── armor_detector_core.cpp            # 核心特征检测
-│   │   ├── armor_detector_lightbar.cpp        # 灯条识别与匹配
-│   │   ├── armor_detector_matching.cpp        # 候选框匹配
-│   │   ├── armor_detector_tracking.cpp        # 目标追踪
-│   │   └── armor_detector_visualization.cpp   # 可视化绘制
-│   ├── uart_protocol.cpp         # 串口协议实现
-│   ├── uart_work.cpp             # 串口工作类
-│   └── armor_camera_capture.cpp  # 相机驱动封装
-├── include/cpp08_armor_detector/ # 头文件目录
-│   ├── armor_detector.hpp        # 识别器接口
-│   ├── armor_camera_capture.hpp  # 相机驱动接口
-│   ├── kalman_filter.hpp         # 卡尔曼滤波器
-│   ├── uart_protocol.hpp         # 串口协议定义
-│   └── uart_work.hpp             # 串口工作接口
-├── model/                        # 模型文件
-│   └── Zenet-已训练好.onnx        # 预训练ONNX模型
-├── msg/                          # 自定义消息
-│   └── ArmorTarget.msg           # 识别结果消息
-├── launch/                       # 启动配置
-│   ├── armor_camera_launch.py     # 标准启动脚本（USB/本地视频）
-│   └── armor_launch_galaxy.py    # 迈德威视/大恒相机启动脚本
-├── CMakeLists.txt                # CMake构建配置
-├── package.xml                   # ROS2功能包描述
-└── readme.md                      # 项目文档
+ros2 launch cpp08_armor_detector armor_launch_galaxy.py
 ```
 
----
-
-## 🔌 系统架构
-
-### 节点与话题通信
-
+### 启动 USB 相机检测
 ```
-┌─────────────────┐
-│  camera_node    │
-│  (图像采集)      │
-└────────┬────────┘
-         │ pub: /armor/image_raw
-         │ (sensor_msgs::msg::Image)
-         ▼
-┌─────────────────┐
-│  detect_node    │
-│  (识别+追踪)     │
-└────────┬────────┘
-         │ pub: /armor/target
-         │ (ArmorTarget)
-         │
-    ┌────▼────┐
-    │ 识别结果 │
-    │ 串口发送 │ --uart--> 云台电控
-    └─────────┘
+ros2 launch cpp08_armor_detector armor_camera_launch.py
 ```
 
-### 详细的节点说明
-
-#### 📸 camera_node - 图像采集节点
-
-**发布者：**
-- `/armor/image_raw` (sensor_msgs/msg/Image) - 原始图像帧
-
-**功能：**
-- 初始化图像源（视频文件、USB相机或工业相机）
-- 按30ms周期（约33fps）读取和发布图像帧
-- 添加ROS2时间戳和坐标系信息
-
-**关键类：**
-- `CameraNode` - ROS2节点类
-- `ArmorCameraCapture` - 相机驱动统一接口
-
-#### 🎯 detect_node - 识别与控制节点
-
-**订阅者：**
-- `/armor/image_raw` (sensor_msgs/msg/Image) - 输入图像
-
-**发布者：**
-- `/armor/target` (cpp08_armor_detector/msg/ArmorTarget) - 识别结果
+节点订阅图像话题，发布检测结果，并通过串口通信。
 
 **功能：**
 1. 订阅图像帧并执行识别算法

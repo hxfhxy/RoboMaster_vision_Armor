@@ -1,7 +1,0 @@
-[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:[m[K In member function ‘[01m[Kcpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat)[m[K’:
-[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:71:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<cv::Rect_<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
-   71 |     for(int i=0; [01;35m[Ki<lightBars.size()[m[K; i++) {
-      |                  [01;35m[K~^~~~~~~~~~~~~~~~~[m[K
-[01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:72:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<cv::Rect_<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
-   72 |         for(int j=i+1; [01;35m[Kj<lightBars.size()[m[K; j++) {
-      |                        [01;35m[K~^~~~~~~~~~~~~~~~~[m[K
