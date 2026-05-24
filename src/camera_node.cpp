@@ -1,9 +1,8 @@
 #include <chrono>
 #include <memory>
 #include <string>
-#include <unistd.h>
 
-//ROS2 头文件
+// ROS2 头文件
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/image.hpp"
 #include "std_msgs/msg/header.hpp"
@@ -12,60 +11,58 @@
 // OpenCV 
 #include <opencv2/opencv.hpp>
 
-//相机驱动
-#include "cpp08_armor_detector/armor_camera_capture.hpp"
-
 using namespace std::chrono_literals;
 
-// 相机节点类：负责从相机采集图像并发布到ROS2话题
+// 相机节点类：改装为离线视频播放器
 class CameraNode : public rclcpp::Node {
 public:
-    // 构造函数：初始化节点、相机、发布者和定时器
-    CameraNode() : Node("camera_node"), 
-      cam_(armor_camera::CameraConfig()) // 初始化相机对象（使用默认配置）
-    {
-        // 初始化图像发布者：话题名为"/armor/image_raw"，队列长度为10
+    CameraNode() : Node("camera_node") {
+        // 初始化图像发布者
         img_pub_ = create_publisher<sensor_msgs::msg::Image>("/armor/image_raw", 10);
 
-        // 打开相机
-        if (!cam_.open()) {
-            RCLCPP_ERROR(get_logger(), "无法初始化图像源！"); // 相机打开失败，打印错误日志
+        // ==================== 🎯 核心修改：打开本地视频 ====================
+        std::string video_path = "/home/hzy/下载/视觉第三轮考核25.12.27/装甲板.mp4";
+        cap_.open(video_path);
+        
+        if (!cap_.isOpened()) {
+            RCLCPP_ERROR(get_logger(), "视频加载失败，请检查路径是否正确: %s", video_path.c_str());
             return;
         }
+        RCLCPP_INFO(get_logger(), "已成功加载离线视频进行测试！");
 
-
-        // 创建定时器：每30ms触发一次publish_img回调函数（约33fps）
-        timer_ = create_wall_timer(2ms, std::bind(&CameraNode::publish_img, this));
+        // 创建定时器：33ms触发一次，约等于 30 帧/秒
+        timer_ = create_wall_timer(33ms, std::bind(&CameraNode::publish_img, this));
     }
 
 private:
-    // 定时器回调函数：采集图像并发布
     void publish_img() {
         cv::Mat frame;
-        if (cam_.read(frame)) { // 从相机读取一帧图像
-            // 发布图像
-            auto header = std_msgs::msg::Header(); // 创建消息头
-            header.stamp = get_clock()->now(); // 填充时间戳
-            header.frame_id = "camera_frame"; // 填充坐标系ID
+        // 如果视频读到了新的一帧
+        if (cap_.read(frame)) { 
+            cv::resize(frame, frame, cv::Size(640, 480));
+            auto header = std_msgs::msg::Header(); 
+            header.stamp = get_clock()->now(); 
+            header.frame_id = "camera_frame"; 
             
-            // 将OpenCV的Mat图像转换为ROS2的Image消息（编码格式为bgr8）
             auto img_msg = cv_bridge::CvImage(header, "bgr8", frame).toImageMsg();
-            
-            // 发布图像消息
             img_pub_->publish(*img_msg);
+            //cv::imshow("Offline Video Player", frame);
+            //cv::waitKey(1);
+        } else {
+            // 如果视频播完了，重置到第 0 帧，实现无限循环播放！
+            RCLCPP_INFO(get_logger(), "视频播放完毕，重新开始循环...");
+            cap_.set(cv::CAP_PROP_POS_FRAMES, 0);
         }
-
     }
 
-    // 成员变量
-    armor_camera::ArmorCameraCapture cam_; // 相机捕获对象
-    rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr img_pub_; // 图像发布者
-    rclcpp::TimerBase::SharedPtr timer_; // 定时器
+    cv::VideoCapture cap_; 
+    rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr img_pub_; 
+    rclcpp::TimerBase::SharedPtr timer_; 
 };
 
 int main(int argc, char** argv) {
-    rclcpp::init(argc, argv); // 初始化ROS2
-    rclcpp::spin(std::make_shared<CameraNode>()); // 运行相机节点，进入事件循环
-    rclcpp::shutdown(); // 关闭ROS2
+    rclcpp::init(argc, argv); 
+    rclcpp::spin(std::make_shared<CameraNode>()); 
+    rclcpp::shutdown(); 
     return 0;
 }

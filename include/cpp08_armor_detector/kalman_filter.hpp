@@ -26,7 +26,7 @@ public:
     cv::Mat I;
 
     // 固定参数：机器人中心到装甲板的旋转半径（单位：米，根据实际尺寸调整）
-    const double r; 
+    double r; 
 
     // 构造函数：初始化EKF的所有矩阵
     ArmorEKF();
@@ -45,13 +45,17 @@ public:
     void getPredictedArmor(cv::Mat& out_tvec, double& out_yaw);
     // 工具函数: 归一化角度到 [-pi, pi]
     static void normalizeYaw(double& yaw);
+    int last_best_id_ = 0;// 上一帧观测到的装甲板ID（0-3），用于判断切换前后板还是左右板
+    cv::Mat get_ypd_jacobian(double x, double y, double z);
+    
+
 private:
     
     cv::TickMeter tick_meter_;  // OpenCV高精度计时器
     bool is_first_predict_;     // 标记是否第一次调用predict
     const double MAX_DT = 0.1;  // 最大允许帧间隔(100ms)，防止跳变
     double prev_timestamp_;
-
+    
 };
 
 #endif // ARMOR_EKF_HPP

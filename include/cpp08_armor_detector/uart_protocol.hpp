@@ -13,14 +13,18 @@
 #endif
 
 // 敌方ID枚举
-typedef enum {
-    ENEMY_ID_UNKNOWN = 0,
-    ENEMY_ID_HERO = 1,
-    ENEMY_ID_ENGINEER = 2,
-    ENEMY_ID_INFANTRY_3 = 3,
-    ENEMY_ID_INFANTRY_4 = 4,
-    ENEMY_ID_SENTRY = 5,
-} Enum_Manifold_Enemy_ID;
+enum Enum_Manifold_Enemy_ID : uint8_t
+{
+    Manifold_Enemy_ID_NONE_0 = 0,
+    Manifold_Enemy_ID_HERO_1=1,
+    Manifold_Enemy_ID_ENGINEER_2=2,
+    Manifold_Enemy_ID_INFANTRY_3=3,
+    Manifold_Enemy_ID_INFANTRY_4=4,
+    Manifold_Enemy_ID_INFANTRY_5=5,
+    Manifold_Enemy_ID_SENTRY_7=7,
+    Manifold_Enemy_ID_OUTPOST=8,
+    Manifold_Enemy_ID_RUNE=9,
+};
 
 //电控发视觉的数据包
 typedef struct PACKED {
@@ -37,6 +41,7 @@ typedef struct PACKED {
     float Gimbal_Yaw_Angle;        // 云台偏航角绝对量（°）(4字节)
     float Gimbal_Pitch_Angle;      // 云台俯仰角绝对值（°）(4字节)
     uint8_t target_valid;     // 目标有效位：0=无效，1=有效
+    //uint8_t armor_number;          // 识别到的装甲板号码（0-9），255表示未识别到有效号码
     uint8_t Frame_Tail;            // 帧尾：0xFF (1字节)
     // 总字节数：1+4+4+1=10字节
 } Manifold_UART_Rx_Data;

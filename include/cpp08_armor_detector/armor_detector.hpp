@@ -46,12 +46,12 @@ public:
     // 在 ArmorDetector 类中添加
     struct RobotGeometry {
         double armor_plate_distance; // 装甲板表面到机器人旋转中心(Yaw轴)的半径距离 (mm)
-        double armor_width;           // 单块装甲板的宽度 (mm)，你已经有了：135mm
-        double armor_height;          // 单块装甲板的高度 (mm)，你已经有了：55mm
+        double armor_width;           // 单块装甲板的宽度 (mm)，135mm
+        double armor_height;          // 单块装甲板的高度 (mm)，55mm
     };
 
     RobotGeometry robot_geom_ = {
-        260.0, // 假设机器人中心到装甲板中心的距离是300mm (根据实际调整)
+        260.0, // 假设机器人中心到装甲板中心的距离是260mm
         135.0,
         55.0
     };
@@ -68,7 +68,10 @@ public:
     // 滤波数据缓存
     std::deque<float> rawYawList, filteredYawList;
 
-    void drawFourArmorsFromOne(cv::Mat& img, const cv::Mat& rvec, const cv::Mat& tvec);
+    void drawFourArmorsFromWorld(cv::Mat& img, double xc_w, double yc_w, double zc_w, double yaw_w, 
+                                            double r1, double r2, double dz, rclcpp::Time timestamp);
+
+    double dynamic_r_ = 0.0;
 
 
     // 目标颜色设定：0 代表蓝色，1 代表红色
@@ -107,7 +110,7 @@ public:
     // find_robot_center成员函数声明
     void find_robot_center();
 
-    
+    int lost_count_ = 0;
 
 private:
     //绝对角度计算成员变量

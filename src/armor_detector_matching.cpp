@@ -12,7 +12,7 @@
 std::vector<DetectedArmor> matchLightBars(const std::vector<cv::RotatedRect>& lightBars, 
                                          const cv::Size& imgSize) {
         std::vector<DetectedArmor> all_armors; 
-        // 定义图像中心点坐标（用于后续计算装甲板优先级）
+        // 定义图像中心点坐标
         cv::Point2f imgCenter(imgSize.width / 2.0f, imgSize.height / 2.0f);
         cv::RotatedRect bestArmorRotatedRect;
         std::vector<cv::Point2f> best_pnp_corners;
@@ -26,6 +26,12 @@ std::vector<DetectedArmor> matchLightBars(const std::vector<cv::RotatedRect>& li
             {
                 auto bar1 = lightBars[i];
                 auto bar2 = lightBars[j];   
+                // ===================== 筛选条件 0：几何过滤 =====================
+                float ratio1 = bar1.size.width / bar1.size.height;
+                float ratio2 = bar2.size.width / bar2.size.height;
+                if (ratio1 > 0.5f || ratio1 < 0.1f || ratio2 > 0.5f || ratio2 < 0.1f) {
+                    continue; // 灯条太宽或太窄，直接跳过
+                }
                 //判断是否为相同灯条
                 // ===================== 筛选条件1：灯条角度差（保证两个灯条近似平行） =====================
                 float Contour_angle = std::abs(bar1.angle - bar2.angle); //角度差
@@ -33,8 +39,8 @@ std::vector<DetectedArmor> matchLightBars(const std::vector<cv::RotatedRect>& li
                 if (Contour_angle > 90.0f) {
                     Contour_angle = 180.0f - Contour_angle;
                 }
-                // 角度差超过20°，说明不平行，不可能是同一装甲板的灯条，直接跳过
-                if (Contour_angle >= 20.0f){
+                // 角度差超过5°，说明不平行，不可能是同一装甲板的灯条，直接跳过
+                if (Contour_angle >= 5.0f){
                     continue;
                 }
                 // ===================== 筛选条件2：灯条尺寸差（保证两个灯条大小相近） =====================
@@ -45,7 +51,7 @@ std::vector<DetectedArmor> matchLightBars(const std::vector<cv::RotatedRect>& li
                 // 灯条宽度方向的宽度差比率
                 float Contour_Len2 = abs(bar1.size.width - bar2.size.width) / std::max(bar1.size.width, bar2.size.width);
                 // 长度差超过50%或宽度差超过80%，直接跳过
-                if (Contour_Len1 > 0.5 || Contour_Len2 > 0.8){
+                if (Contour_Len1 > 0.5 || Contour_Len2 > 0.5){
                     continue;            
                 }
                  // ===================== 筛选条件3：灯条垂直距离（保证两个灯条在同一水平线上） =====================
@@ -53,7 +59,8 @@ std::vector<DetectedArmor> matchLightBars(const std::vector<cv::RotatedRect>& li
                 float y_diff = std::abs(bar1.center.y - bar2.center.y);
                 // 如果 y_diff 太大，说明两个灯条一个在上一个在下，显然不是装甲板
                 float max_h = std::max(bar1.size.height, bar2.size.height);
-                if (y_diff > max_h * 1.2f) { 
+                // 灯条垂直距离不能超过最大灯条高度的1.2倍（根据实际装甲板尺寸调整）
+                if (y_diff > max_h * 0.8f) { 
                     continue; 
                 }       
                 // ===================== 筛选条件4：装甲板宽高比（保证形状合理） =====================
@@ -63,8 +70,8 @@ std::vector<DetectedArmor> matchLightBars(const std::vector<cv::RotatedRect>& li
                 // 计算水平距离与灯条高度的比值（近似装甲板的宽高比）
                 float wh_ratio = center_dist / max_h;
 
-                // 装甲板不能太窄（<1.0），也不能太宽（>6.0）
-                if (wh_ratio < 1.0f||wh_ratio > 6.0f) {
+                // 装甲板宽高比应该在合理范围内，过大或过小都不合理（根据实际装甲板尺寸调整）
+                if (wh_ratio < 0.8f||wh_ratio > 3.0f) {
                     continue;
                 }
                 
@@ -163,61 +170,84 @@ std::vector<DetectedArmor> deduplicateArmors(const std::vector<DetectedArmor>& a
 
 
 /**
- * @brief PnP解算：通过2D图像角点 → 3D空间位姿（距离、yaw、pitch）
- * @param armor 装甲板对象（输入：2D图像角点；输出：3D位姿）
- * @param cameraMatrix 相机内参矩阵（提前标定好）
- * @param distCoeffs 相机畸变系数（提前标定好）
- * @param objectPoints 装甲板的3D物理坐标（单位：mm，根据实际装甲板尺寸定义）
+ * @brief PnP解算：严格使用 IPPE 算法和 FLU 零点模型，并引入双解验证魔法
  */
-void calculatePnP(DetectedArmor& armor, const cv::Mat& cameraMatrix, const cv::Mat& distCoeffs, const std::vector<cv::Point3f>& objectPoints) {
-    cv::Mat rvec, tvec; // 旋转向量、平移向量（PnP解算的输出）
-    // 调用OpenCV的PnP解算函数，求解3D-2D的对应关系
-    bool success = cv::solvePnP(objectPoints, armor.pnp_corners, cameraMatrix, distCoeffs, rvec, tvec);
-    
-    if (success) {
-        armor.tvec = tvec.clone(); // 保存平移向量（3D空间位置：X水平、Y垂直、Z深度）
-        armor.rvec = rvec.clone(); // 保存旋转向量（3D空间姿态）
-        // 提取空间平移坐标 (X, Y, Z)
-        double x = tvec.at<double>(0, 0);
-        double y = tvec.at<double>(1, 0);
-        double z = tvec.at<double>(2, 0);
-        
-        // ===================== 1. 计算目标距离（欧氏距离） =====================
-        armor.distance = std::sqrt(x*x + y*y + z*z); 
-        
-        // ===================== 2. 计算偏航角 (yaw) 和俯仰角 (pitch) =====================
-        // yaw：水平方向角度（x/z的反正切，目标在相机右侧为正）
-        double delta_yaw_rad = std::atan2(tvec.at<double>(0),tvec.at<double>(2));
-        // pitch：垂直方向角度（-y/z的反正切，目标在相机上方为正）
-        double delta_pitch_rad = std::atan2(-tvec.at<double>(1),tvec.at<double>(2));
-        double distance = std::sqrt(x*x + y*y + z*z);
+void calculatePnP(DetectedArmor& armor, const cv::Mat& cameraMatrix, const cv::Mat& distCoeffs, const std::vector<cv::Point3f>& /*objectPoints*/) {
+    std::vector<cv::Point2f> image_points = {
+        armor.pnp_corners[1], // 左下
+        armor.pnp_corners[0], // 左上
+        armor.pnp_corners[3], // 右上
+        armor.pnp_corners[2]  // 右下
+    };
 
-        // 弧度转角度，存入装甲板对象
-        armor.yaw = -delta_yaw_rad * 180.0 / CV_PI;   // 取反：目标在右，Yaw减小
-        armor.pitch = delta_pitch_rad * 180.0 / CV_PI; 
+    float pixel_width = cv::norm(armor.pnp_corners[0] - armor.pnp_corners[3]);
+    float pixel_height = cv::norm(armor.pnp_corners[0] - armor.pnp_corners[1]);
+    bool is_small = (pixel_width / pixel_height) < 3.2f;
 
-        // ===================== 3. 【关键新增】计算【EKF几何模型用的自身朝向角】 =====================
-        // 把 OpenCV 旋转向量 rvec 转成旋转矩阵
-        cv::Mat rot_mat;
-        cv::Rodrigues(rvec, rot_mat);
-        
-        // 从旋转矩阵中提取绕 Y 轴的旋转角（yaw）
-        // 公式：yaw = atan2(R(0,2), R(2,2))
-        // 注意：这里的符号必须和你 EKF 里的 sin/cos 匹配！
-        double extracted_yaw = std::atan2(rot_mat.at<double>(0, 2), rot_mat.at<double>(2, 2));
-        
-        // 【重要】根据你的几何模型调整符号
-        // 如果发现整车中心方向反了，把下面这行的注释去掉：
-        // extracted_yaw = -extracted_yaw; 
-        
-        // 赋值给新增的成员（给 EKF 用）
-        armor.armor_yaw_rad = extracted_yaw;
+    double half_w = is_small ? (135.0 / 2.0) : (230.0 / 2.0);
+    double half_h = 55.0 / 2.0;
 
-    }else{
-        // PnP解算失败，将距离、角度置零
-        armor.distance = 0;
-        armor.yaw = 0;
-        armor.pitch = 0;    
-        armor.armor_yaw_rad = 0;
+    // 【核心修复 1】：必须使用标准 OpenCV 坐标系 (X右, Y下, Z前)
+    // 只有这样，PnP 算出来的法向量才是 Z 轴！
+    std::vector<cv::Point3f> object_points_cv = {
+        cv::Point3f(-half_w,  half_h, 0), // 左下
+        cv::Point3f(-half_w, -half_h, 0), // 左上
+        cv::Point3f( half_w, -half_h, 0), // 右上
+        cv::Point3f( half_w,  half_h, 0)  // 右下
+    };
+
+    std::vector<cv::Mat> rvecs, tvecs;
+    std::vector<double> errors;
+    int solutions = cv::solvePnPGeneric(
+        object_points_cv, image_points, cameraMatrix, distCoeffs,
+        rvecs, tvecs, false, cv::SOLVEPNP_IPPE, cv::noArray(), cv::noArray(), errors);
+
+    if (solutions <= 0 || rvecs.empty() || tvecs.empty()) {
+        armor.distance = 0; armor.yaw = 0; armor.pitch = 0; 
+        return;
     }
+
+    int best = 0;
+    if (rvecs.size() > 1 && tvecs.size() > 1) {
+        auto yaw_from_rvec = [](cv::Mat &rv) {
+            cv::Mat R;
+            cv::Rodrigues(rv, R);
+            // 提取 Z 轴向量，计算 Yaw 角
+            return std::atan2(R.at<double>(0, 2), R.at<double>(2, 2)) * 180.0 / CV_PI;
+        };
+
+        double yaw0 = yaw_from_rvec(rvecs[0]);
+        double yaw1 = yaw_from_rvec(rvecs[1]);
+        
+        // 提取装甲板在 2D 图像上的倾斜趋势
+        cv::Point2f left_axis = armor.pnp_corners[0] - armor.pnp_corners[1]; // 左侧灯条向量
+        cv::Point2f right_axis = armor.pnp_corners[3] - armor.pnp_corners[2];// 右侧灯条向量
+        // 根据图像特征计算一个粗略的 2D 偏转角趋势（正负号能反映是往左偏还是往右偏）
+        double armor_angle_trend = (std::atan2(left_axis.x, left_axis.y) + 
+                                    std::atan2(right_axis.x, right_axis.y));
+        
+        // 利用 2D 图像特征的倾向，去选择那个符合物理事实的 3D 解
+        if ((armor_angle_trend > 0 && yaw1 > 0 && yaw0 < 0) || 
+            (armor_angle_trend < 0 && yaw1 < 0 && yaw0 > 0)) {
+            best = 1;
+        }
+    }
+    armor.tvec = tvecs[best].clone(); 
+    armor.rvec = rvecs[best].clone();
+    
+    double x = armor.tvec.at<double>(0, 0);
+    double y = armor.tvec.at<double>(1, 0);
+    double z = armor.tvec.at<double>(2, 0);
+    
+    armor.distance = std::sqrt(x*x + y*y + z*z); 
+    cv::Mat R_best;
+    cv::Rodrigues(armor.rvec, R_best);
+    cv::Vec3d normal(R_best.at<double>(0, 2), R_best.at<double>(1, 2), R_best.at<double>(2, 2));
+    cv::Vec3d pos(x, y, z);
+    if (normal.dot(pos) > 0.0) {
+        normal = -normal;
+    }
+    armor.yaw = std::atan2(normal[0], normal[2]) * 180.0 / CV_PI; // 这是真正的物体朝向
+    
+    armor.pitch = std::atan2(-y, z) * 180.0 / CV_PI;
 }
