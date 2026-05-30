@@ -1,0 +1,307 @@
+[0.000000] (-) TimerEvent: {}
+[0.000236] (cpp08_armor_detector) JobQueued: {'identifier': 'cpp08_armor_detector', 'dependencies': OrderedDict()}
+[0.000258] (cpp08_armor_detector) JobStarted: {'identifier': 'cpp08_armor_detector'}
+[0.005520] (cpp08_armor_detector) JobProgress: {'identifier': 'cpp08_armor_detector', 'progress': 'cmake'}
+[0.006387] (cpp08_armor_detector) JobProgress: {'identifier': 'cpp08_armor_detector', 'progress': 'build'}
+[0.006857] (cpp08_armor_detector) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector', '--', '-j32', '-l32'], 'cwd': '/home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'hzy'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/hzy'), ('CHROME_DESKTOP', 'code.desktop'), ('TERM_PROGRAM_VERSION', '1.111.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '2009'), ('SYSTEMD_EXEC_PID', '2202'), ('IM_CONFIG_CHECK_ENV', '1'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('CLASH_SOCKS_PROXY', 'socks5://127.0.0.1:7890'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '167615'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hzy/ws01_plumbing/install:/home/hzy/ws00_helloworld/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hzy'), ('JOURNAL_STREAM', '8:14620'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'hzy'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/hzy/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/hzy/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/hzy/.local/bin:/opt/ros/humble/bin:/home/hzy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/hzy-ASUS-TUF-Gaming-A16-FA607PV-FA607PV:@/tmp/.ICE-unix/2164,unix/hzy-ASUS-TUF-Gaming-A16-FA607PV-FA607PV:/tmp/.ICE-unix/2164'), ('INVOCATION_ID', '0425080401ca42e78478139d1fe10e91'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('CLASH_HTTP_PROXY', 'http://127.0.0.1:7890'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.6QJ4M3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-55ba69116a.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo:/opt/ros/humble')]), 'shell': False}
+[0.014177] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[0mCMake Error: The current CMakeCache.txt directory /home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector/CMakeCache.txt is different than the directory /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt\x1b[0m\n'}
+[0.037562] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099690] (-) TimerEvent: {}
+[0.124727] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.151990] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.154254] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.159963] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.168906] (cpp08_armor_detector) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.178258] (cpp08_armor_detector) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.199763] (-) TimerEvent: {}
+[0.206818] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.209397] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.291483] (cpp08_armor_detector) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.299843] (-) TimerEvent: {}
+[0.332999] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.355312] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.365090] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.399952] (-) TimerEvent: {}
+[0.500195] (-) TimerEvent: {}
+[0.580636] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.600277] (-) TimerEvent: {}
+[0.700511] (-) TimerEvent: {}
+[0.800740] (-) TimerEvent: {}
+[0.856000] (cpp08_armor_detector) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.900824] (-) TimerEvent: {}
+[0.969360] (cpp08_armor_detector) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.985978] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.000906] (-) TimerEvent: {}
+[1.003041] (cpp08_armor_detector) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.003143] (cpp08_armor_detector) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.003178] (cpp08_armor_detector) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.054096] (cpp08_armor_detector) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.098674] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.100971] (-) TimerEvent: {}
+[1.148235] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.149390] (cpp08_armor_detector) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/hzy/ArmorDetector/cpp08_armor_detector/include;/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_cpp;/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_c>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_fastrtps_c>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_cpp>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_fastrtps_cpp>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_introspection_c>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_introspection_cpp>;/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_c;/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_py;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/include>\n'}
+[1.149503] (cpp08_armor_detector) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.173310] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[1.173437] (cpp08_armor_detector) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[1.176583] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.182671] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.185862] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.201050] (-) TimerEvent: {}
+[1.209089] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.209200] (cpp08_armor_detector) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.212379] (cpp08_armor_detector) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.214286] (cpp08_armor_detector) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.257997] (cpp08_armor_detector) StdoutLine: {'line': b'-- Generating done\n'}
+[1.268440] (cpp08_armor_detector) StdoutLine: {'line': b'-- Build files have been written to: /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector\n'}
+[1.292857] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_generator_c\x1b[0m\n'}
+[1.293308] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target camera_node\x1b[0m\n'}
+[1.300057] (cpp08_armor_detector) StdoutLine: {'line': b'[  5%] Built target cpp08_armor_detector__cpp\n'}
+[1.300145] (cpp08_armor_detector) StdoutLine: {'line': b'[ 11%] Built target cpp08_armor_detector__rosidl_generator_c\n'}
+[1.301110] (-) TimerEvent: {}
+[1.302530] (cpp08_armor_detector) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding CXX object CMakeFiles/camera_node.dir/src/camera_node.cpp.o\x1b[0m\n'}
+[1.306996] (cpp08_armor_detector) StdoutLine: {'line': b'[ 14%] Built target ament_cmake_python_copy_cpp08_armor_detector\n'}
+[1.307941] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_c\x1b[0m\n'}
+[1.308084] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[1.308154] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[1.308343] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[1.314986] (cpp08_armor_detector) StdoutLine: {'line': b'[ 22%] Built target cpp08_armor_detector__rosidl_typesupport_c\n'}
+[1.315122] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_cpp\x1b[0m\n'}
+[1.315161] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[1.315538] (cpp08_armor_detector) StdoutLine: {'line': b'[ 31%] Built target cpp08_armor_detector__rosidl_typesupport_introspection_cpp\n'}
+[1.316197] (cpp08_armor_detector) StdoutLine: {'line': b'[ 48%] Built target cpp08_armor_detector__rosidl_typesupport_introspection_c\n'}
+[1.316234] (cpp08_armor_detector) StdoutLine: {'line': b'[ 48%] Built target cpp08_armor_detector__rosidl_typesupport_fastrtps_c\n'}
+[1.323269] (cpp08_armor_detector) StdoutLine: {'line': b'[ 57%] Built target cpp08_armor_detector__rosidl_typesupport_fastrtps_cpp\n'}
+[1.324490] (cpp08_armor_detector) StdoutLine: {'line': b'[ 65%] Built target cpp08_armor_detector__rosidl_typesupport_cpp\n'}
+[1.332731] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target detect_node\x1b[0m\n'}
+[1.340095] (cpp08_armor_detector) StdoutLine: {'line': b'[ 65%] Built target cpp08_armor_detector\n'}
+[1.342900] (cpp08_armor_detector) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/detect_node.dir/src/detect_node.cpp.o\x1b[0m\n'}
+[1.356220] (cpp08_armor_detector) StdoutLine: {'line': b'[ 71%] Built target cpp08_armor_detector__py\n'}
+[1.366164] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_generator_py\x1b[0m\n'}
+[1.375445] (cpp08_armor_detector) StdoutLine: {'line': b'[ 77%] Built target cpp08_armor_detector__rosidl_generator_py\n'}
+[1.383425] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[1.383511] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[1.383830] (cpp08_armor_detector) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cpp08_armor_detector__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[1.391346] (cpp08_armor_detector) StdoutLine: {'line': b'[ 88%] Built target cpp08_armor_detector__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.391430] (cpp08_armor_detector) StdoutLine: {'line': b'[ 88%] Built target cpp08_armor_detector__rosidl_typesupport_introspection_c__pyext\n'}
+[1.392063] (cpp08_armor_detector) StdoutLine: {'line': b'[ 94%] Built target cpp08_armor_detector__rosidl_typesupport_c__pyext\n'}
+[1.401173] (-) TimerEvent: {}
+[1.436001] (cpp08_armor_detector) StdoutLine: {'line': b'running egg_info\n'}
+[1.436448] (cpp08_armor_detector) StdoutLine: {'line': b'writing cpp08_armor_detector.egg-info/PKG-INFO\n'}
+[1.436590] (cpp08_armor_detector) StdoutLine: {'line': b'writing dependency_links to cpp08_armor_detector.egg-info/dependency_links.txt\n'}
+[1.436696] (cpp08_armor_detector) StdoutLine: {'line': b'writing top-level names to cpp08_armor_detector.egg-info/top_level.txt\n'}
+[1.438149] (cpp08_armor_detector) StdoutLine: {'line': b"reading manifest file 'cpp08_armor_detector.egg-info/SOURCES.txt'\n"}
+[1.438654] (cpp08_armor_detector) StdoutLine: {'line': b"writing manifest file 'cpp08_armor_detector.egg-info/SOURCES.txt'\n"}
+[1.460212] (cpp08_armor_detector) StdoutLine: {'line': b'[ 94%] Built target ament_cmake_python_build_cpp08_armor_detector_egg\n'}
+[1.501237] (-) TimerEvent: {}
+[1.601346] (-) TimerEvent: {}
+[1.701495] (-) TimerEvent: {}
+[1.801689] (-) TimerEvent: {}
+[1.901820] (-) TimerEvent: {}
+[2.002009] (-) TimerEvent: {}
+[2.102328] (-) TimerEvent: {}
+[2.202636] (-) TimerEvent: {}
+[2.302945] (-) TimerEvent: {}
+[2.403265] (-) TimerEvent: {}
+[2.503583] (-) TimerEvent: {}
+[2.603877] (-) TimerEvent: {}
+[2.704151] (-) TimerEvent: {}
+[2.804415] (-) TimerEvent: {}
+[2.904664] (-) TimerEvent: {}
+[3.004927] (-) TimerEvent: {}
+[3.105189] (-) TimerEvent: {}
+[3.205433] (-) TimerEvent: {}
+[3.261337] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KArmorDetector::ArmorDetector()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.261532] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:57:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kdt\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.261575] (cpp08_armor_detector) StderrLine: {'line': b'   57 |     float \x1b[01;35m\x1b[Kdt\x1b[m\x1b[K = 1.0f/50.0f;\n'}
+[3.261607] (cpp08_armor_detector) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[3.264673] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kcpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.264756] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:191:22:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<cv::Rect_<int> >::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.264818] (cpp08_armor_detector) StderrLine: {'line': b'  191 |     for(int i = 0; \x1b[01;35m\x1b[Ki < lightBars.size()\x1b[m\x1b[K; i++) {\n'}
+[3.264860] (cpp08_armor_detector) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K~~^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.264901] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:192:30:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<cv::Rect_<int> >::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.264963] (cpp08_armor_detector) StderrLine: {'line': b'  192 |         for(int j = i + 1; \x1b[01;35m\x1b[Kj < lightBars.size()\x1b[m\x1b[K; j++) {\n'}
+[3.264992] (cpp08_armor_detector) StderrLine: {'line': b'      |                            \x1b[01;35m\x1b[K~~^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.267928] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:326:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kfiltered_yaw_deg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.267983] (cpp08_armor_detector) StderrLine: {'line': b'  326 |         float \x1b[01;35m\x1b[Kfiltered_yaw_deg\x1b[m\x1b[K = ekf.x.at<float>(3, 0) * 180.0f / CV_PI; // \xe8\xbd\xac\xe5\x9b\x9e\xe8\xa7\x92\xe5\xba\xa6\n'}
+[3.268012] (cpp08_armor_detector) StderrLine: {'line': b'      |               \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.268038] (cpp08_armor_detector) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:327:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Krotate_speed\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.268069] (cpp08_armor_detector) StderrLine: {'line': b'  327 |         float \x1b[01;35m\x1b[Krotate_speed\x1b[m\x1b[K = ekf.x.at<float>(4, 0);                      // \xe8\xbf\x99\xe4\xb8\xaa\xe5\x80\xbc\xe5\xa6\x82\xe6\x9e\x9c\xe5\xa4\xa7\xe4\xba\x8e\xe6\x9f\x90\xe9\x98\x88\xe5\x80\xbc\xef\xbc\x8c\xe8\xaf\xb4\xe6\x98\x8e\xe6\x98\xaf\xe5\xaf\xb9\xe9\x9d\xa2\xe5\x9c\xa8\xe5\xb0\x8f\xe9\x99\x80\xe8\x9e\xba\xef\xbc\x81\n'}
+[3.268094] (cpp08_armor_detector) StderrLine: {'line': b'      |               \x1b[01;35m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.305542] (-) TimerEvent: {}
+[3.405836] (-) TimerEvent: {}
+[3.506132] (-) TimerEvent: {}
+[3.606381] (-) TimerEvent: {}
+[3.706634] (-) TimerEvent: {}
+[3.806922] (-) TimerEvent: {}
+[3.907193] (-) TimerEvent: {}
+[4.007461] (-) TimerEvent: {}
+[4.107724] (-) TimerEvent: {}
+[4.207969] (-) TimerEvent: {}
+[4.308212] (-) TimerEvent: {}
+[4.408459] (-) TimerEvent: {}
+[4.508701] (-) TimerEvent: {}
+[4.608968] (-) TimerEvent: {}
+[4.709216] (-) TimerEvent: {}
+[4.809452] (-) TimerEvent: {}
+[4.909691] (-) TimerEvent: {}
+[5.009952] (-) TimerEvent: {}
+[5.043835] (cpp08_armor_detector) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking CXX executable camera_node\x1b[0m\n'}
+[5.110063] (-) TimerEvent: {}
+[5.210347] (-) TimerEvent: {}
+[5.310632] (-) TimerEvent: {}
+[5.352766] (cpp08_armor_detector) StdoutLine: {'line': b'[ 97%] Built target camera_node\n'}
+[5.410739] (-) TimerEvent: {}
+[5.511004] (-) TimerEvent: {}
+[5.611273] (-) TimerEvent: {}
+[5.711531] (-) TimerEvent: {}
+[5.811784] (-) TimerEvent: {}
+[5.912056] (-) TimerEvent: {}
+[6.012316] (-) TimerEvent: {}
+[6.112574] (-) TimerEvent: {}
+[6.212831] (-) TimerEvent: {}
+[6.313097] (-) TimerEvent: {}
+[6.413337] (-) TimerEvent: {}
+[6.513590] (-) TimerEvent: {}
+[6.613850] (-) TimerEvent: {}
+[6.714118] (-) TimerEvent: {}
+[6.814354] (-) TimerEvent: {}
+[6.914581] (-) TimerEvent: {}
+[7.014815] (-) TimerEvent: {}
+[7.115065] (-) TimerEvent: {}
+[7.199988] (cpp08_armor_detector) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable detect_node\x1b[0m\n'}
+[7.215124] (-) TimerEvent: {}
+[7.315320] (-) TimerEvent: {}
+[7.415577] (-) TimerEvent: {}
+[7.515855] (-) TimerEvent: {}
+[7.616152] (-) TimerEvent: {}
+[7.630406] (cpp08_armor_detector) StdoutLine: {'line': b'[100%] Built target detect_node\n'}
+[7.653201] (cpp08_armor_detector) CommandEnded: {'returncode': 0}
+[7.653965] (cpp08_armor_detector) JobProgress: {'identifier': 'cpp08_armor_detector', 'progress': 'install'}
+[7.659478] (cpp08_armor_detector) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector'], 'cwd': '/home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'hzy'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/hzy'), ('CHROME_DESKTOP', 'code.desktop'), ('TERM_PROGRAM_VERSION', '1.111.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '2009'), ('SYSTEMD_EXEC_PID', '2202'), ('IM_CONFIG_CHECK_ENV', '1'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('CLASH_SOCKS_PROXY', 'socks5://127.0.0.1:7890'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '167615'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/hzy/ws01_plumbing/install:/home/hzy/ws00_helloworld/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'hzy'), ('JOURNAL_STREAM', '8:14620'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'hzy'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/hzy/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/hzy/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/hzy/.local/bin:/opt/ros/humble/bin:/home/hzy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/hzy-ASUS-TUF-Gaming-A16-FA607PV-FA607PV:@/tmp/.ICE-unix/2164,unix/hzy-ASUS-TUF-Gaming-A16-FA607PV-FA607PV:/tmp/.ICE-unix/2164'), ('INVOCATION_ID', '0425080401ca42e78478139d1fe10e91'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('CLASH_HTTP_PROXY', 'http://127.0.0.1:7890'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.6QJ4M3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-55ba69116a.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/hzy/ArmorDetector1/cpp08_armor_detector/build/cpp08_armor_detector'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/hzy/ws01_plumbing/install/base_interfaces_demo:/opt/ros/humble')]), 'shell': False}
+[7.665441] (cpp08_armor_detector) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.665513] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/rosidl_interfaces/cpp08_armor_detector\n'}
+[7.665570] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector\n'}
+[7.665603] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg\n'}
+[7.665660] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_generator_c__visibility_control.h\n'}
+[7.665689] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/armor_target.h\n'}
+[7.665715] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail\n'}
+[7.665764] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__functions.h\n'}
+[7.665789] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.h\n'}
+[7.665815] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__struct.h\n'}
+[7.665839] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__functions.c\n'}
+[7.665863] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/library_path.sh\n'}
+[7.665886] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/library_path.dsv\n'}
+[7.666280] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_generator_c.so\n'}
+[7.666382] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector\n'}
+[7.666419] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg\n'}
+[7.666464] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[7.666491] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail\n'}
+[7.666528] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_fastrtps_c.h\n'}
+[7.666738] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_fastrtps_c.so\n'}
+[7.666833] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector\n'}
+[7.666864] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg\n'}
+[7.666900] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/armor_target.hpp\n'}
+[7.666952] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[7.666990] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail\n'}
+[7.667026] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__traits.hpp\n'}
+[7.667051] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__builder.hpp\n'}
+[7.667076] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.hpp\n'}
+[7.667122] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__struct.hpp\n'}
+[7.667151] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector\n'}
+[7.667174] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg\n'}
+[7.667196] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[7.667219] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail\n'}
+[7.667242] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.667267] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/dds_fastrtps\n'}
+[7.667397] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_fastrtps_cpp.so\n'}
+[7.667492] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector\n'}
+[7.667523] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg\n'}
+[7.667558] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[7.667587] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail\n'}
+[7.667612] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_introspection_c.h\n'}
+[7.667648] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.c\n'}
+[7.667939] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_introspection_c.so\n'}
+[7.668212] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_c.so\n'}
+[7.668294] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector\n'}
+[7.668329] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg\n'}
+[7.668370] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail\n'}
+[7.668395] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.cpp\n'}
+[7.668431] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.668708] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_introspection_cpp.so\n'}
+[7.669125] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_cpp.so\n'}
+[7.669220] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/pythonpath.sh\n'}
+[7.669252] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/pythonpath.dsv\n'}
+[7.669366] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info\n'}
+[7.669399] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[7.669499] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[7.669592] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[7.669681] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[7.669792] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector\n'}
+[7.669831] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[7.669880] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[7.669910] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[7.669941] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/__init__.py\n'}
+[7.669980] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[7.670022] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_c.c\n'}
+[7.670055] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg\n'}
+[7.670082] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/__init__.py\n'}
+[7.670120] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/_armor_target.py\n'}
+[7.670166] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/_armor_target_s.c\n'}
+[7.670191] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[7.670216] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/libcpp08_armor_detector__rosidl_generator_py.so\n'}
+[7.689422] (cpp08_armor_detector) StdoutLine: {'line': b"Listing '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector'...\n"}
+[7.689482] (cpp08_armor_detector) StdoutLine: {'line': b"Compiling '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/__init__.py'...\n"}
+[7.689522] (cpp08_armor_detector) StdoutLine: {'line': b"Listing '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg'...\n"}
+[7.693162] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[7.693488] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[7.693902] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[7.694361] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_generator_py.so\n'}
+[7.694458] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/msg/ArmorTarget.idl\n'}
+[7.694499] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/msg/ArmorTarget.msg\n'}
+[7.695009] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/cpp08_armor_detector/camera_node\n'}
+[7.695609] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/cpp08_armor_detector/detect_node\n'}
+[7.695707] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/launch\n'}
+[7.695750] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/launch/armor_launch.py\n'}
+[7.695774] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/launch/armor_camera_launch.py\n'}
+[7.696058] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/package_run_dependencies/cpp08_armor_detector\n'}
+[7.696096] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/parent_prefix_path/cpp08_armor_detector\n'}
+[7.696139] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/ament_prefix_path.sh\n'}
+[7.696167] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/ament_prefix_path.dsv\n'}
+[7.696244] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/path.sh\n'}
+[7.696275] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/path.dsv\n'}
+[7.696363] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.bash\n'}
+[7.696397] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.sh\n'}
+[7.696437] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.zsh\n'}
+[7.696461] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.dsv\n'}
+[7.696532] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.dsv\n'}
+[7.696633] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/packages/cpp08_armor_detector\n'}
+[7.696790] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_cExport.cmake\n'}
+[7.696831] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_cExport-noconfig.cmake\n'}
+[7.696971] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[7.697012] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[7.697121] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_cppExport.cmake\n'}
+[7.697216] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[7.697254] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[7.697374] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cExport.cmake\n'}
+[7.697405] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[7.697580] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cExport.cmake\n'}
+[7.697619] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[7.697790] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[7.697822] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[7.697993] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cppExport.cmake\n'}
+[7.698037] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[7.698184] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_pyExport.cmake\n'}
+[7.698219] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_pyExport-noconfig.cmake\n'}
+[7.698263] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/rosidl_cmake-extras.cmake\n'}
+[7.698287] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[7.698328] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[7.698358] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[7.698383] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[7.698419] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[7.698465] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[7.698489] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detectorConfig.cmake\n'}
+[7.698512] (cpp08_armor_detector) StdoutLine: {'line': b'-- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detectorConfig-version.cmake\n'}
+[7.698539] (cpp08_armor_detector) StdoutLine: {'line': b'-- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.xml\n'}
+[7.700193] (cpp08_armor_detector) CommandEnded: {'returncode': 0}
+[7.710728] (cpp08_armor_detector) JobEnded: {'identifier': 'cpp08_armor_detector', 'rc': 0}
+[7.711084] (-) EventReactorShutdown: {}

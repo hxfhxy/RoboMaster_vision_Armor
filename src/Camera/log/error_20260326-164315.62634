@@ -1,0 +1,95 @@
+Log file created at: 2026/03/26 16:43:15
+Running on machine: acuteluo
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0326 16:43:15.861799 62660 U3VControl.cpp:225] WriteAddr:268435472, BulkOut error:-4
+E0326 16:43:15.861927 62660 CameraU3VBase.cpp:555] Function:SetMediaTypeSel, Code:set_pixel_format(type), Error:-52
+E0326 16:43:15.872520 62660 U3VControl.cpp:225] WriteAddr:268435548, BulkOut error:-4
+E0326 16:43:15.872572 62660 CameraU3VBase.cpp:525] Function:SetFrameSpeedSel, Code:set_frame_speed(iSel), Error:-52
+E0326 16:43:15.883253 62660 U3VControl.cpp:225] WriteAddr:268435844, BulkOut error:-4
+E0326 16:43:15.894001 62660 U3VControl.cpp:225] WriteAddr:268435552, BulkOut error:-4
+E0326 16:43:15.894063 62660 CameraU3VBase.cpp:1646] Function:SetTriggerSel, Code:set_trigger_mode(0), Error:-52
+E0326 16:43:15.894074 62660 U3VControl.cpp:225] WriteAddr:268435556, BulkOut error:-4
+E0326 16:43:15.894080 62660 CameraU3VBase.cpp:1683] Function:SetTriggerCount, Code:set_trigger_count(iCount), Error:-52
+E0326 16:43:15.894086 62660 U3VControl.cpp:225] WriteAddr:268435620, BulkOut error:-4
+E0326 16:43:15.894091 62660 CameraU3VBase.cpp:1759] Function:SetExtTrigSignalType, Code:set_trigger_activation(iType), Error:-52
+E0326 16:43:15.894097 62660 U3VControl.cpp:225] WriteAddr:268435564, BulkOut error:-4
+E0326 16:43:15.894101 62660 CameraU3VBase.cpp:1775] Function:SetExtTrigDelayTime, Code:set_trigger_delay(uDelayTimeUs), Error:-52
+E0326 16:43:15.899441 62660 CameraU3VBase.cpp:1781] Function:SetExtTrigBufferedDelayTime, Code:m_pDev->WriteFPGA(0x1fe, uDelayTimeUs & 0xffff), Error:-31
+E0326 16:43:15.899500 62660 U3VControl.cpp:225] WriteAddr:268435560, BulkOut error:-4
+E0326 16:43:15.899506 62660 CameraU3VBase.cpp:1791] Function:SetExtTrigJitterTime, Code:set_ext_trig_jitter_time(uTimeUs), Error:-52
+E0326 16:43:15.899513 62660 U3VControl.cpp:225] WriteAddr:268435636, BulkOut error:-4
+E0326 16:43:15.899516 62660 CameraU3VBase.cpp:1767] Function:SetExtTrigShutterType, Code:set_ext_trig_shutter_type(iType), Error:-52
+E0326 16:43:15.910096 62660 U3VControl.cpp:225] WriteAddr:268435568, BulkOut error:-4
+E0326 16:43:15.910153 62660 CameraU3VBase.cpp:1726] Function:SetStrobeMode, Code:set_strobe_mode(iMode), Error:-52
+E0326 16:43:15.910161 62660 U3VControl.cpp:225] WriteAddr:268435572, BulkOut error:-4
+E0326 16:43:15.910166 62660 CameraU3VBase.cpp:1735] Function:SetStrobeDelayTime, Code:set_strobe_delay(uDelayTimeUs), Error:-52
+E0326 16:43:15.910171 62660 U3VControl.cpp:225] WriteAddr:268435632, BulkOut error:-4
+E0326 16:43:15.910174 62660 CameraU3VBase.cpp:1751] Function:SetStrobePolarity, Code:set_strobe_polarity(uPolarity), Error:-52
+E0326 16:43:15.910178 62660 U3VControl.cpp:225] WriteAddr:268435576, BulkOut error:-4
+E0326 16:43:15.910182 62660 CameraU3VBase.cpp:1743] Function:SetStrobePulseWidth, Code:set_strobe_width(uTimeUs), Error:-52
+E0326 16:43:15.910187 62660 U3VControl.cpp:225] WriteAddr:268435500, BulkOut error:-4
+E0326 16:43:15.910192 62660 U3VControl.cpp:225] WriteAddr:268435628, BulkOut error:-4
+E0326 16:43:15.910195 62660 CameraU3VBase.cpp:454] Function:SetAE, Code:set_anti_flick(0), Error:-52
+E0326 16:43:15.910200 62660 U3VControl.cpp:225] WriteAddr:268435628, BulkOut error:-4
+E0326 16:43:15.910203 62660 CameraU3VBase.cpp:482] Function:SetAntiFlick, Code:set_anti_flick(data), Error:-52
+E0326 16:43:15.910208 62660 U3VControl.cpp:225] WriteAddr:268435628, BulkOut error:-4
+E0326 16:43:15.910211 62660 CameraU3VBase.cpp:482] Function:SetAntiFlick, Code:set_anti_flick(data), Error:-52
+E0326 16:43:15.910214 62660 CameraU3VBase.cpp:491] Function:SetAntiFlickFreq, Code:SetAntiFlick(m_bAntiFlick), Error:-52
+E0326 16:43:15.910219 62660 U3VControl.cpp:225] WriteAddr:268435520, BulkOut error:-4
+E0326 16:43:15.910223 62660 CameraU3VBase.cpp:502] Function:SetAnalogGain, Code:set_analog_gain((float)iGain), Error:-52
+E0326 16:43:15.910233 62660 U3VControl.cpp:225] WriteAddr:268435532, BulkOut error:-4
+E0326 16:43:15.910236 62660 CameraU3VBase.cpp:2211] Function:SetWbClrTempMode, Code:set_color_temperature(uDat), Error:-52
+E0326 16:43:15.910259 62660 U3VControl.cpp:225] WriteAddr:268435532, BulkOut error:-4
+E0326 16:43:15.910264 62660 CameraU3VBase.cpp:2211] Function:SetWbClrTempMode, Code:set_color_temperature(uDat), Error:-52
+E0326 16:43:15.910269 62660 U3VControl.cpp:225] WriteAddr:268435672, BulkOut error:-4
+E0326 16:43:15.910272 62660 CameraU3VBase.cpp:2302] Function:SetUserColorCorrectMatrix, Code:set_user_color_temp_rgb_mat(pColorTemp->fColorCorrectMatrix), Error:-52
+E0326 16:43:15.910277 62660 U3VControl.cpp:225] WriteAddr:268435532, BulkOut error:-4
+E0326 16:43:15.910280 62660 CameraU3VBase.cpp:2211] Function:SetWbClrTempMode, Code:set_color_temperature(uDat), Error:-52
+E0326 16:43:15.910285 62660 U3VControl.cpp:225] WriteAddr:268435660, BulkOut error:-4
+E0326 16:43:15.910288 62660 CameraU3VBase.cpp:2297] Function:SetUserColorCorrectMatrix, Code:set_user_color_temp_rgb_gain(pColorTemp->fColorCorrectRgain, pColorTemp->fColorCorrectGgain, pColorTemp->fColorCorrectBgain), Error:-52
+E0326 16:43:15.910293 62660 U3VControl.cpp:225] WriteAddr:268435532, BulkOut error:-4
+E0326 16:43:15.910297 62660 CameraU3VBase.cpp:2211] Function:SetWbClrTempMode, Code:set_color_temperature(uDat), Error:-52
+E0326 16:43:15.910303 62660 U3VControl.cpp:225] WriteAddr:268435536, BulkOut error:-4
+E0326 16:43:15.910307 62660 CameraU3VBase.cpp:2123] Function:SetRgbGain, Code:set_rgb_gain(RGB_GAIN_VAL(fRGain, fGGain, fBGain)), Error:-52
+E0326 16:43:15.910312 62660 U3VControl.cpp:225] WriteAddr:268435544, BulkOut error:-4
+E0326 16:43:15.910316 62660 CameraU3VBase.cpp:2100] Function:SetSaturation, Code:set_saturation(iSaturation), Error:-52
+E0326 16:43:15.910322 62660 U3VControl.cpp:225] WriteAddr:268435536, BulkOut error:-4
+E0326 16:43:15.910326 62660 CameraU3VBase.cpp:2123] Function:SetRgbGain, Code:set_rgb_gain(RGB_GAIN_VAL(fRGain, fGGain, fBGain)), Error:-52
+E0326 16:43:15.910331 62660 U3VControl.cpp:225] WriteAddr:268435544, BulkOut error:-4
+E0326 16:43:15.910334 62660 CameraU3VBase.cpp:2100] Function:SetSaturation, Code:set_saturation(iSaturation), Error:-52
+E0326 16:43:15.910339 62660 U3VControl.cpp:225] WriteAddr:268435528, BulkOut error:-4
+E0326 16:43:15.910343 62660 CameraU3VBase.cpp:2071] Function:SetGamma, Code:set_gamma((m_dwCfgSoftIsp & MVISP_GAMMA) ? 100 : iGamma), Error:-52
+E0326 16:43:15.910347 62660 U3VControl.cpp:225] WriteAddr:268435524, BulkOut error:-4
+E0326 16:43:15.910351 62660 CameraU3VBase.cpp:2079] Function:SetContrast, Code:set_contrast((m_dwCfgSoftIsp & MVISP_CONTRAST) ? 100 : iContrast), Error:-52
+E0326 16:43:15.910355 62660 U3VControl.cpp:225] WriteAddr:268435648, BulkOut error:-4
+E0326 16:43:15.910358 62660 CameraU3VBase.cpp:2332] Function:SetBlackLevel, Code:set_black_level(BlackLevel), Error:-52
+E0326 16:43:15.911490 62660 U3VControl.cpp:225] WriteAddr:268435652, BulkOut error:-4
+E0326 16:43:15.911513 62660 CameraU3VBase.cpp:2379] Function:SetWBWindow, Code:set_wb_window_hori((regHEnd << 16) | regHStart), Error:-52
+E0326 16:43:15.911518 62660 CameraU3VBase.cpp:2392] Function:SetHFlip, Code:SetWBWindow(m_iWBWinHOff, m_iWBWinVOff, m_iWBWinWidth, m_iWBWinHeight), Error:-52
+E0326 16:43:15.911525 62660 U3VControl.cpp:225] WriteAddr:268435652, BulkOut error:-4
+E0326 16:43:15.911530 62660 CameraU3VBase.cpp:2379] Function:SetWBWindow, Code:set_wb_window_hori((regHEnd << 16) | regHStart), Error:-52
+E0326 16:43:15.911533 62660 CameraU3VBase.cpp:2404] Function:SetVFlip, Code:SetWBWindow(m_iWBWinHOff, m_iWBWinVOff, m_iWBWinWidth, m_iWBWinHeight), Error:-52
+E0326 16:43:15.922152 62660 U3VControl.cpp:225] WriteAddr:268435584, BulkOut error:-4
+E0326 16:43:15.922211 62660 CameraU3VBase.cpp:2419] Function:SetHDFlip, Code:set_flip_ctrl(uMirrSet), Error:-52
+E0326 16:43:15.932950 62660 U3VControl.cpp:225] WriteAddr:268435820, BulkOut error:-4
+E0326 16:43:15.933023 62660 U3VControl.cpp:225] WriteAddr:268435592, BulkOut error:-4
+E0326 16:43:15.933038 62660 CameraU3VBase.cpp:3162] Function:set_image_size, Code:WriteMyrm(MYRM_OFFSET(resolution_mod), &ResMod, sizeof(ResMod)), Error:-52
+E0326 16:43:15.933043 62660 CameraU3VBase.cpp:351] Function:SetImageSize, Code:set_image_size(iResMode, iHoffset, iVOffset, iSensorOutWidth, iSensorOutHeight), Error:-52
+E0326 16:43:15.933063 62660 CameraU3VBase.cpp:376] Function:SetImageResolution, Code:SetImageSize(sImageSize.iIndex == 0xff, &sImageSize), Error:-52
+E0326 16:43:15.933071 62660 U3VControl.cpp:76] ReadAddr:268435644, BulkOut error:-4
+E0326 16:43:15.933075 62660 CameraU3VBase.cpp:1930] Function:SetOutPutIOModeReg, Code:get_gpio_output_mode(regMode), Error:-52
+E0326 16:43:15.933079 62660 CameraU3VBase.cpp:1839] Function:SetOutPutIOMode, Code:SetOutPutIOModeReg(iOutputIOIndex, iMode), Error:-52
+E0326 16:43:15.933081 62660 U3VControl.cpp:76] ReadAddr:268435600, BulkOut error:-4
+E0326 16:43:15.933084 62660 CameraU3VBase.cpp:1940] Function:SetOutPutIOStateReg, Code:get_gpio_output(RegData), Error:-52
+E0326 16:43:15.933087 62660 U3VControl.cpp:76] ReadAddr:268435644, BulkOut error:-4
+E0326 16:43:15.933089 62660 CameraU3VBase.cpp:1930] Function:SetOutPutIOModeReg, Code:get_gpio_output_mode(regMode), Error:-52
+E0326 16:43:15.933091 62660 CameraU3VBase.cpp:1839] Function:SetOutPutIOMode, Code:SetOutPutIOModeReg(iOutputIOIndex, iMode), Error:-52
+E0326 16:43:15.933095 62660 U3VControl.cpp:76] ReadAddr:268435600, BulkOut error:-4
+E0326 16:43:15.933097 62660 CameraU3VBase.cpp:1940] Function:SetOutPutIOStateReg, Code:get_gpio_output(RegData), Error:-52
+E0326 16:43:15.958874 62660 U3VControl.cpp:225] WriteAddr:268435508, BulkOut error:-4
+E0326 16:43:15.958961 62660 CameraU3VBase.cpp:395] Function:SetExpTime, Code:set_exposure_time((float)fExpTime), Error:-52
+E0326 16:43:15.958973 62660 U3VControl.cpp:225] WriteAddr:268435508, BulkOut error:-4
+E0326 16:43:15.958978 62660 CameraU3VBase.cpp:395] Function:SetExpTime, Code:set_exposure_time((float)fExpTime), Error:-52
+E0326 16:43:15.958984 62660 CameraU3VBase.cpp:709] Function:UpdateParam, Code:SetExpTime(m_fExptime), Error:-52
+E0326 16:43:15.958990 62660 CameraU3VBase.cpp:1060] Function:ReConnect, Code:UpdateParam(-1), Error:-52
+E0326 16:43:20.566553 62634 CameraU3VBase.cpp:782] Function:PauseVideo, Code:set_acquisition_command(0), Error:-19

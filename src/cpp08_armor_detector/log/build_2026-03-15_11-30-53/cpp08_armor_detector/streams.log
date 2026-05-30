@@ -1,0 +1,272 @@
+[0.006s] Invoking command in '/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/cpp08_armor_detector -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector
+[0.042s] -- The C compiler identification is GNU 11.4.0
+[0.078s] -- The CXX compiler identification is GNU 11.4.0
+[0.082s] -- Detecting C compiler ABI info
+[0.126s] -- Detecting C compiler ABI info - done
+[0.130s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.130s] -- Detecting C compile features
+[0.130s] -- Detecting C compile features - done
+[0.132s] -- Detecting CXX compiler ABI info
+[0.180s] -- Detecting CXX compiler ABI info - done
+[0.184s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.184s] -- Detecting CXX compile features
+[0.184s] -- Detecting CXX compile features - done
+[0.185s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.270s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.316s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[0.338s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.340s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.345s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.350s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.358s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.380s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.381s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.443s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.460s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.485s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.490s] -- Looking for pthread.h
+[0.539s] -- Looking for pthread.h - found
+[0.539s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.585s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.586s] -- Found Threads: TRUE  
+[0.613s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.629s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[0.637s] -- Found OpenCV: /usr (found version "4.5.4") 
+[0.637s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.803s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.057s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.157s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.169s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.170s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.185s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.185s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.185s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.185s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.197s] -- Found PythonExtra: .so  
+[1.238s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.249s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.255s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.256s] -- Configured cppcheck include dirs: /home/hzy/ArmorDetector/cpp08_armor_detector/include;/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_cpp;/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_c>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_fastrtps_c>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_cpp>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_fastrtps_cpp>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_introspection_c>;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_typesupport_introspection_cpp>;/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_c;/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector/rosidl_generator_py;$<BUILD_INTERFACE:/home/hzy/ArmorDetector/cpp08_armor_detector/include>
+[1.256s] -- Configured cppcheck exclude dirs and/or files: 
+[1.261s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.261s] -- Configured cpplint exclude dirs and/or files: 
+[1.262s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.264s] -- Added test 'lint_cmake' to check CMake code style
+[1.265s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.271s] -- Added test 'uncrustify' to check C / C++ code style
+[1.271s] -- Configured uncrustify additional arguments: 
+[1.272s] -- Added test 'xmllint' to check XML markup files
+[1.273s] -- Configuring done
+[1.302s] -- Generating done
+[1.312s] -- Build files have been written to: /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector
+[1.324s] Invoked command in '/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/hzy/ArmorDetector/cpp08_armor_detector -DCMAKE_INSTALL_PREFIX=/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector
+[1.325s] Invoking command in '/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector -- -j32 -l32
+[1.353s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.360s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.360s] [  8%] [32mBuilding CXX object CMakeFiles/camera_node.dir/src/camera_node.cpp.o[0m
+[1.364s] [  8%] Built target ament_cmake_python_copy_cpp08_armor_detector
+[1.479s] running egg_info
+[1.479s] creating cpp08_armor_detector.egg-info
+[1.480s] writing cpp08_armor_detector.egg-info/PKG-INFO
+[1.480s] writing dependency_links to cpp08_armor_detector.egg-info/dependency_links.txt
+[1.480s] writing top-level names to cpp08_armor_detector.egg-info/top_level.txt
+[1.480s] writing manifest file 'cpp08_armor_detector.egg-info/SOURCES.txt'
+[1.481s] reading manifest file 'cpp08_armor_detector.egg-info/SOURCES.txt'
+[1.481s] writing manifest file 'cpp08_armor_detector.egg-info/SOURCES.txt'
+[1.499s] [  8%] Built target ament_cmake_python_build_cpp08_armor_detector_egg
+[1.529s] [ 11%] [32mBuilding C object CMakeFiles/cpp08_armor_detector__rosidl_generator_c.dir/rosidl_generator_c/cpp08_armor_detector/msg/detail/armor_target__functions.c.o[0m
+[1.531s] [ 11%] Built target cpp08_armor_detector__cpp
+[1.538s] [ 14%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.538s] [ 20%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.538s] [ 20%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.559s] [ 22%] [32m[1mLinking C shared library libcpp08_armor_detector__rosidl_generator_c.so[0m
+[1.582s] [ 22%] Built target cpp08_armor_detector__rosidl_generator_c
+[1.588s] [ 25%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.588s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.589s] [ 31%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.699s] [ 34%] [32mBuilding CXX object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cpp08_armor_detector/msg/armor_target__type_support.cpp.o[0m
+[1.705s] [ 37%] [32mBuilding CXX object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cpp08_armor_detector/msg/detail/armor_target__type_support.cpp.o[0m
+[1.714s] [ 40%] [32mBuilding CXX object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cpp08_armor_detector/msg/detail/dds_fastrtps/armor_target__type_support.cpp.o[0m
+[1.759s] [ 42%] [32mBuilding CXX object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_c.dir/rosidl_typesupport_c/cpp08_armor_detector/msg/armor_target__type_support.cpp.o[0m
+[1.768s] [ 45%] [32mBuilding C object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cpp08_armor_detector/msg/detail/armor_target__type_support.c.o[0m
+[1.769s] [ 48%] [32mBuilding CXX object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cpp08_armor_detector/msg/detail/armor_target__type_support_c.cpp.o[0m
+[1.778s] [ 51%] [32m[1mLinking CXX shared library libcpp08_armor_detector__rosidl_typesupport_c.so[0m
+[1.789s] [ 54%] [32m[1mLinking C shared library libcpp08_armor_detector__rosidl_typesupport_introspection_c.so[0m
+[1.805s] [ 54%] Built target cpp08_armor_detector__rosidl_typesupport_c
+[1.809s] [ 54%] Built target cpp08_armor_detector__rosidl_typesupport_introspection_c
+[1.852s] [ 57%] [32m[1mLinking CXX shared library libcpp08_armor_detector__rosidl_typesupport_cpp.so[0m
+[1.876s] [ 57%] Built target cpp08_armor_detector__rosidl_typesupport_cpp
+[1.888s] [ 60%] [32mBuilding CXX object CMakeFiles/detect_node.dir/src/detect_node.cpp.o[0m
+[1.916s] [ 62%] [32m[1mLinking CXX shared library libcpp08_armor_detector__rosidl_typesupport_introspection_cpp.so[0m
+[1.936s] [ 65%] [32m[1mLinking CXX shared library libcpp08_armor_detector__rosidl_typesupport_fastrtps_cpp.so[0m
+[1.947s] [ 65%] Built target cpp08_armor_detector__rosidl_typesupport_introspection_cpp
+[1.951s] [ 68%] [32m[1mLinking CXX shared library libcpp08_armor_detector__rosidl_typesupport_fastrtps_c.so[0m
+[1.982s] [ 68%] Built target cpp08_armor_detector__rosidl_typesupport_fastrtps_cpp
+[1.996s] [ 68%] Built target cpp08_armor_detector__rosidl_typesupport_fastrtps_c
+[2.008s] [ 68%] Built target cpp08_armor_detector
+[2.027s] [ 71%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.256s] [ 71%] Built target cpp08_armor_detector__py
+[2.269s] [ 74%] [32mBuilding C object CMakeFiles/cpp08_armor_detector__rosidl_generator_py.dir/rosidl_generator_py/cpp08_armor_detector/msg/_armor_target_s.c.o[0m
+[2.331s] [ 77%] [32m[1mLinking C shared library rosidl_generator_py/cpp08_armor_detector/libcpp08_armor_detector__rosidl_generator_py.so[0m
+[2.356s] [ 77%] Built target cpp08_armor_detector__rosidl_generator_py
+[2.368s] [ 80%] [32mBuilding C object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.369s] [ 85%] [32mBuilding C object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_c.c.o[0m
+[2.369s] [ 85%] [32mBuilding C object CMakeFiles/cpp08_armor_detector__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.430s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.430s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.430s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.457s] [ 94%] Built target cpp08_armor_detector__rosidl_typesupport_c__pyext
+[2.458s] [ 94%] Built target cpp08_armor_detector__rosidl_typesupport_introspection_c__pyext
+[2.458s] [ 94%] Built target cpp08_armor_detector__rosidl_typesupport_fastrtps_c__pyext
+[3.587s] [01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:[m[K In member function ‘[01m[Kcpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat)[m[K’:
+[3.587s] [01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:71:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<cv::Rect_<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[3.587s]    71 |     for(int i=0; [01;35m[Ki<lightBars.size()[m[K; i++) {
+[3.587s]       |                  [01;35m[K~^~~~~~~~~~~~~~~~~[m[K
+[3.587s] [01m[K/home/hzy/ArmorDetector/cpp08_armor_detector/src/detect_node.cpp:72:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<cv::Rect_<int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[3.587s]    72 |         for(int j=i+1; [01;35m[Kj<lightBars.size()[m[K; j++) {
+[3.587s]       |                        [01;35m[K~^~~~~~~~~~~~~~~~~[m[K
+[4.822s] [ 97%] [32m[1mLinking CXX executable camera_node[0m
+[5.117s] [ 97%] Built target camera_node
+[7.308s] [100%] [32m[1mLinking CXX executable detect_node[0m
+[7.714s] [100%] Built target detect_node
+[7.724s] Invoked command in '/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector -- -j32 -l32
+[7.730s] Invoking command in '/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector
+[7.735s] -- Install configuration: ""
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/rosidl_interfaces/cpp08_armor_detector
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_generator_c__visibility_control.h
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/armor_target.h
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__functions.h
+[7.735s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.h
+[7.736s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__struct.h
+[7.736s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__functions.c
+[7.736s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/library_path.sh
+[7.736s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/library_path.dsv
+[7.736s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_generator_c.so
+[7.736s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_generator_c.so" to ""
+[7.736s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector
+[7.736s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg
+[7.736s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[7.736s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_fastrtps_c.h
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_fastrtps_c.so
+[7.737s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_fastrtps_c.so" to ""
+[7.737s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector
+[7.737s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/armor_target.hpp
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_generator_cpp__visibility_control.hpp
+[7.737s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__traits.hpp
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__builder.hpp
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.hpp
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__struct.hpp
+[7.737s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector
+[7.737s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg
+[7.737s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.738s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail
+[7.738s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_fastrtps_cpp.hpp
+[7.738s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/dds_fastrtps
+[7.738s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_fastrtps_cpp.so
+[7.738s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_fastrtps_cpp.so" to ""
+[7.738s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector
+[7.738s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg
+[7.738s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[7.738s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail
+[7.738s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_introspection_c.h
+[7.738s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.c
+[7.738s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_introspection_c.so
+[7.739s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_introspection_c.so" to ""
+[7.739s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_c.so
+[7.739s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_c.so" to ""
+[7.739s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector
+[7.739s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg
+[7.739s] -- Up-to-date: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail
+[7.739s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__type_support.cpp
+[7.739s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/include/cpp08_armor_detector/cpp08_armor_detector/msg/detail/armor_target__rosidl_typesupport_introspection_cpp.hpp
+[7.739s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_introspection_cpp.so
+[7.739s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_introspection_cpp.so" to ""
+[7.739s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_cpp.so
+[7.740s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_typesupport_cpp.so" to ""
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/pythonpath.sh
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/pythonpath.dsv
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/SOURCES.txt
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/top_level.txt
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/dependency_links.txt
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector-0.0.0-py3.10.egg-info/PKG-INFO
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector
+[7.740s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_fastrtps_c.c
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_introspection_c.c
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/__init__.py
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/_cpp08_armor_detector_s.ep.rosidl_typesupport_c.c
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/__init__.py
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/_armor_target.py
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/_armor_target_s.c
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[7.741s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/libcpp08_armor_detector__rosidl_generator_py.so
+[7.761s] Listing '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector'...
+[7.761s] Compiling '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/__init__.py'...
+[7.761s] Listing '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg'...
+[7.761s] Compiling '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/__init__.py'...
+[7.761s] Compiling '/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/msg/_armor_target.py'...
+[7.764s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[7.764s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[7.764s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[7.765s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[7.765s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[7.765s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/local/lib/python3.10/dist-packages/cpp08_armor_detector/cpp08_armor_detector_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[7.765s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_generator_py.so
+[7.765s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/libcpp08_armor_detector__rosidl_generator_py.so" to ""
+[7.765s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/msg/ArmorTarget.idl
+[7.765s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/msg/ArmorTarget.msg
+[7.765s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/cpp08_armor_detector/camera_node
+[7.766s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/cpp08_armor_detector/camera_node" to ""
+[7.766s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/cpp08_armor_detector/detect_node
+[7.770s] -- Set runtime path of "/home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/lib/cpp08_armor_detector/detect_node" to ""
+[7.770s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/launch
+[7.770s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/launch/armor_launch.py
+[7.771s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/package_run_dependencies/cpp08_armor_detector
+[7.771s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/parent_prefix_path/cpp08_armor_detector
+[7.771s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/ament_prefix_path.sh
+[7.771s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/ament_prefix_path.dsv
+[7.771s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/path.sh
+[7.771s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/environment/path.dsv
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.bash
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.sh
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.zsh
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/local_setup.dsv
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.dsv
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/ament_index/resource_index/packages/cpp08_armor_detector
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_cExport.cmake
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_cExport-noconfig.cmake
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cExport.cmake
+[7.772s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_cppExport.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cppExport.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cExport.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cExport.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cExport-noconfig.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cppExport.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[7.773s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cppExport.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detector__rosidl_typesupport_cppExport-noconfig.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_pyExport.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/export_cpp08_armor_detector__rosidl_generator_pyExport-noconfig.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/rosidl_cmake-extras.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_dependencies-extras.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_include_directories-extras.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_libraries-extras.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/ament_cmake_export_targets-extras.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detectorConfig.cmake
+[7.774s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/cmake/cpp08_armor_detectorConfig-version.cmake
+[7.775s] -- Installing: /home/hzy/ArmorDetector/cpp08_armor_detector/install/cpp08_armor_detector/share/cpp08_armor_detector/package.xml
+[7.776s] Invoked command in '/home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/hzy/ArmorDetector/cpp08_armor_detector/build/cpp08_armor_detector
