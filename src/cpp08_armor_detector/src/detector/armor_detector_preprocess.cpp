@@ -1,4 +1,4 @@
-#include "cpp08_armor_detector/armor_detector.hpp"
+#include "cpp08_armor_detector/detector/armor_detector.hpp"
 cv::Mat ArmorDetector::preprocess(cv::Mat img)
 {
     // 预处理常量设置

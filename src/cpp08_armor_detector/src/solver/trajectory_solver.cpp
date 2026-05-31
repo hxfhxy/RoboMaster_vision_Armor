@@ -1,4 +1,4 @@
-#include "cpp08_armor_detector/trajectory_solver.hpp"
+#include "cpp08_armor_detector/solver/trajectory_solver.hpp"
 
 // 注意这里：同样绝对不要加 namespace 包装！
 

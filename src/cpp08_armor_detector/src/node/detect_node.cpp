@@ -5,7 +5,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include <opencv2/opencv.hpp>
-#include "cpp08_armor_detector/armor_detector.hpp"
+#include "cpp08_armor_detector/detector/armor_detector.hpp"
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2_ros/buffer.h>
 #include <tf2_ros/transform_listener.h>

@@ -39,7 +39,7 @@ rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typ
 # ==================== 3. 编译 camera_node (【原有】迈德威视/USB相机驱动节点) ====================
 # ✅ 【唯一修改】删除了 uart_protocol.cpp 和 uart_work.cpp，相机节点不需要串口！
 add_executable(camera_node 
-  src/camera_node.cpp
+  src/node/camera_node.cpp
   src/armor_camera_capture.cpp
 )
 
@@ -71,19 +71,20 @@ target_include_directories(camera_node PUBLIC
 # ==================== 4. 编译 detect_node (识别算法节点) ====================
 # ✅ 保留串口代码，只有识别节点需要和电控通信
 add_executable(detect_node 
-  src/detect_node.cpp 
-  src/armor_detector.cpp 
-  src/armor_detector_preprocess.cpp 
-  src/armor_detector_core.cpp 
-  src/armor_detector_lightbar.cpp
-  src/armor_detector_matching.cpp
-  src/armor_detector_visualization.cpp 
-  src/armor_detector_tracking.cpp
-  src/uart_protocol.cpp 
-  src/uart_work.cpp
-  src/armor_ekf.cpp
-  src/trajectory_solver.cpp
-  src/pnp_solver.cpp
+  src/node/detect_node.cpp 
+  src/detector/armor_detector.cpp 
+  src/detector/armor_detector_preprocess.cpp 
+  src/detector/armor_detector_core.cpp 
+  src/detector/armor_yolo.cpp
+  src/detector/armor_detector_lightbar.cpp
+  src/detector/armor_detector_matching.cpp
+  src/visualizer/armor_detector_visualization.cpp 
+  src/tracker/armor_detector_tracking.cpp
+  src/node/uart_protocol.cpp 
+  src/node/uart_work.cpp
+  src/tracker/armor_ekf.cpp
+  src/solver/trajectory_solver.cpp
+  src/detector/pnp_solver.cpp
 )
 
 ament_target_dependencies(detect_node 

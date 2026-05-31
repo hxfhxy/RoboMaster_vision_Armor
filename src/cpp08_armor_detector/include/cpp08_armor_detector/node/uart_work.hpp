@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <vector>
-#include "cpp08_armor_detector/uart_protocol.hpp"
+#include "cpp08_armor_detector/node/uart_protocol.hpp"
 
 class RoboMasterUART {
 private:

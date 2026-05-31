@@ -1,5 +1,6 @@
-#include "cpp08_armor_detector/armor_detector_matching.hpp"
-#include "cpp08_armor_detector/armor_detector_lightbar.hpp"
+#include "cpp08_armor_detector/detector/pnp_solver.hpp"
+#include "cpp08_armor_detector/detector/armor_detector_matching.hpp"
+#include "cpp08_armor_detector/detector/armor_detector_lightbar.hpp"
 #include <set>
 #include <algorithm>
 

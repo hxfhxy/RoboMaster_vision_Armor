@@ -1,4 +1,4 @@
-#include "cpp08_armor_detector/armor_detector_lightbar.hpp"
+#include "cpp08_armor_detector/detector/armor_detector_lightbar.hpp"
 
 /**
  * @brief 顺时针排序四个角点（用于规整旋转矩形的角点顺序）
