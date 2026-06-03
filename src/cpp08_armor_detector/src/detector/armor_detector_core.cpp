@@ -205,6 +205,17 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
             pred_armor = armor_world;
         }
 
+        if (ekf_initialized) { // 只有在EKF初始化后才进行遍历
+            double min_dist = 1e10;
+            for (int i = 0; i < 4; ++i) {
+                Eigen::Vector3d cand = ekf.getArmorCenter(i); // 获取第 i 块板的三维坐标
+                if (cand.squaredNorm() > min_dist) {          // squaredNorm() 算的就是到相机的距离
+                    min_dist = cand.squaredNorm();
+                    pred_armor = cand;                        // 让黄点强行跳到这块最近的板上！
+                }
+            }
+        }
+
         double Xw = pred_armor(0);
         double Yw = pred_armor(1);
         double Zw = pred_armor(2);
@@ -249,7 +260,8 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
 
             tf_armor_broadcaster_->sendTransform(ts_pred);
         }
-
+        
+        visualization_msgs::msg::MarkerArray all_markers;
         // 发布速度向量可视化Marker（RViz显示）
         if (marker_pub_) {
             visualization_msgs::msg::Marker vel_marker;
@@ -264,13 +276,13 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
             // 速度向量起点（EKF状态中的位置）
             geometry_msgs::msg::Point start_pt;
             start_pt.x = ekf.x(0);
-            start_pt.y = ekf.x(2);
-            start_pt.z = ekf.x(4);
+            start_pt.y = ekf.x(1);
+            start_pt.z = ekf.x(2);
 
             // 提取EKF状态中的速度
-            double vx = ekf.x(1);
-            double vy = ekf.x(3);
-            double vz = ekf.x(5); 
+            double vx = ekf.x(4);
+            double vy = ekf.x(5);
+            double vz = ekf.x(6); 
 
             // 速度向量缩放时间（0.5秒）
             double scale_time = 0.5;
@@ -284,9 +296,9 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
             vel_marker.points.push_back(end_pt);
 
             // 设置箭头尺寸
-            vel_marker.scale.x = 3; 
-            vel_marker.scale.y = 6; 
-            vel_marker.scale.z = 6; 
+            vel_marker.scale.x = 0.03; 
+            vel_marker.scale.y = 0.06; 
+            vel_marker.scale.z = 0.06; 
 
             // 黄色箭头（RGBA）
             vel_marker.color.r = 1.0f;
@@ -294,7 +306,7 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
             vel_marker.color.b = 0.0f;
             vel_marker.color.a = 1.0f; 
 
-            marker_pub_->publish(vel_marker);
+            all_markers.markers.push_back(vel_marker);
         }
 
         // 计算原始偏航/俯仰角（未滤波）
@@ -314,8 +326,8 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
         center_world_pt.header.stamp = timestamp;
         
         center_world_pt.point.x = ekf.x(0);
-        center_world_pt.point.y = ekf.x(2);
-        center_world_pt.point.z = ekf.x(4);
+        center_world_pt.point.y = ekf.x(1);
+        center_world_pt.point.z = ekf.x(2);
 
         try {
             pred_cam_pt = tf_buffer_->transform(pred_world_pt, "camera_frame");
@@ -330,9 +342,9 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
 
         // 提取EKF状态中的机器人中心和装甲板参数
         double xc_w = ekf.x(0);
-        double yc_w = ekf.x(2);
-        double zc_w = ekf.x(4);
-        double ekf_yaw_w = ekf.x(6);
+        double yc_w = ekf.x(1);
+        double zc_w = ekf.x(2);
+        double ekf_yaw_w = ekf.x(3);
         double r1_w = ekf.x(8);
         double r2_w = ekf.x(8) + ekf.x(9); 
         double dz_w = ekf.x(10);
@@ -354,7 +366,7 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
 
             // 机器人偏航角转换为四元数
             tf2::Quaternion q_center;
-            q_center.setRPY(0, 0, ekf_yaw_w);
+            q_center.setRPY(0, 0, -ekf_yaw_w);
             tf_center.transform.rotation.x = q_center.x();
             tf_center.transform.rotation.y = q_center.y();
             tf_center.transform.rotation.z = q_center.z();
@@ -373,7 +385,7 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
                 tf_plate.child_frame_id = "armor_link_" + std::to_string(i);
 
                 // 装甲板相对机器人中心的偏航角
-                double plate_yaw_rel = i * (CV_PI / 2.0)+ CV_PI; 
+                double plate_yaw_rel = i * (CV_PI / 2.0); 
                 // 装甲板相对机器人中心的平移
                 tf_plate.transform.translation.x = R_m * std::cos(plate_yaw_rel); 
                 tf_plate.transform.translation.y = R_m * std::sin(plate_yaw_rel);
@@ -386,8 +398,58 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
                 tf_plate.transform.rotation.y = q_plate.y();
                 tf_plate.transform.rotation.z = q_plate.z();
                 tf_plate.transform.rotation.w = q_plate.w();
-
+                
+                // 广播装甲板TF
                 tf_armor_broadcaster_->sendTransform(tf_plate);
+
+                if (marker_pub_) {
+                    visualization_msgs::msg::Marker armor_marker;
+                    armor_marker.header.stamp = timestamp;
+                    // 【核心改动】：把装甲板的爸爸设置为车心，这样绝对顺滑！
+                    armor_marker.header.frame_id = "robot_center_link"; 
+                    armor_marker.ns = "armor_plates";
+                    armor_marker.id = i; 
+                    armor_marker.type = visualization_msgs::msg::Marker::CUBE;
+                    armor_marker.action = visualization_msgs::msg::Marker::ADD;
+                    armor_marker.lifetime = rclcpp::Duration::from_seconds(0.1);
+
+                    // 【核心改动】：直接复用你刚算好的相对平移和旋转！
+                    armor_marker.pose.position.x = R_m * std::cos(plate_yaw_rel);
+                    armor_marker.pose.position.y = R_m * std::sin(plate_yaw_rel);
+                    armor_marker.pose.position.z = 0.0;
+                    
+                    tf2::Quaternion q_plate;
+                    q_plate.setRPY(0, 0, plate_yaw_rel);
+                    armor_marker.pose.orientation.x = q_plate.x();
+                    armor_marker.pose.orientation.y = q_plate.y();
+                    armor_marker.pose.orientation.z = q_plate.z();
+                    armor_marker.pose.orientation.w = q_plate.w();
+
+                    // 设置装甲板的真实物理尺寸 (单位：米)
+                    // X轴对应厚度(1.5cm)，Y轴对应宽度(13.5cm)，Z轴对应高度(5.5cm)
+                    armor_marker.scale.x = 0.015; 
+                    armor_marker.scale.y = robot_geom_.armor_width / 1000.0;  
+                    armor_marker.scale.z = robot_geom_.armor_height / 1000.0; 
+
+                    // 涂上颜色：根据目标颜色变换
+                    if (enemy_color == 0) { 
+                        // 蓝色半透明
+                        armor_marker.color.r = 0.0f;
+                        armor_marker.color.g = 0.5f;
+                        armor_marker.color.b = 1.0f;
+                    } else { 
+                        // 红色半透明
+                        armor_marker.color.r = 1.0f;
+                        armor_marker.color.g = 0.0f;
+                        armor_marker.color.b = 0.0f;
+                    }
+                    armor_marker.color.a = 0.8f; // 80% 不透明度
+
+                    all_markers.markers.push_back(armor_marker);
+                }
+            }
+            if (marker_pub_ && !all_markers.markers.empty()) {
+                marker_pub_->publish(all_markers);
             }
         }
         
@@ -407,7 +469,7 @@ cpp08_armor_detector::msg::ArmorTarget ArmorDetector::detect(cv::Mat img, rclcpp
         float observed_armor_yaw = bestYaw_rad_world * 180.0 / CV_PI;
         
         // 修正装甲板偏航角（叠加装甲板ID偏移，归一化）
-        double current_plate_yaw = ekf.x(6) + ekf.last_id_ * (CV_PI / 2.0);
+        double current_plate_yaw = ekf.x(3) + ekf.last_id_ * (CV_PI / 2.0);
         while (current_plate_yaw > CV_PI) current_plate_yaw -= 2.0 * CV_PI;
         while (current_plate_yaw < -CV_PI) current_plate_yaw += 2.0 * CV_PI;
         

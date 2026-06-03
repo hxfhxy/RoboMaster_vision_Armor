@@ -48,6 +48,7 @@ void calculatePnP(DetectedArmor& armor, const cv::Mat& cameraMatrix, const cv::M
 
     // 双解验证
     int best = 0;
+    // 计算两个解的yaw角，并提取图像倾斜趋势，选择符合物理事实的解
     if (rvecs.size() > 1 && tvecs.size() > 1) {
         auto yaw_from_rvec = [](cv::Mat &rv) {
             cv::Mat R;

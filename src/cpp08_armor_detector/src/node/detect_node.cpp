@@ -24,7 +24,7 @@ public:
         detector_ = std::make_shared<ArmorDetector>();
         detector_->setTFBuffer(tf_buffer_); 
         detector_->setArmorTFBroadcaster(tf_armor_broadcaster_); 
-        marker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>("/armor/velocity_marker", 10);
+        marker_pub_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("/armor/velocity_marker", 10);
         detector_->setMarkerPublisher(marker_pub_);
         
         // 3. 加载模型
@@ -92,7 +92,7 @@ private:
     std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
     std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
     std::shared_ptr<tf2_ros::TransformBroadcaster> tf_armor_broadcaster_;
-    rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr marker_pub_;
+    rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_pub_;
 };
 
 int main(int argc, char **argv) {

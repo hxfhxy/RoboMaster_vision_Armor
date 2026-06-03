@@ -2,7 +2,7 @@
 #include "cpp08_armor_detector/detector/armor_detector_lightbar.hpp"
 #include <set>
 #include <algorithm>
-
+//这里都是传统识别，已没用了，后续可以删除
 /**
  * @brief 灯条两两配对：通过几何规则筛选出符合装甲板特征的组合
  * @param lightBars 预处理后提取到的所有灯条旋转矩形

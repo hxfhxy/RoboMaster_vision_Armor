@@ -2,13 +2,9 @@
 #include <cmath>
 #include <algorithm>
 
-#ifndef M_PI
-#define M_PI 3.14159265358979323846
-#endif
-
 /**
  * @brief 装甲板EKF构造函数，初始化默认参数
- * 状态向量x维度11：[cx, vx, cy, vy, cz, vz, yaw, vyaw, r, l, h]
+ * 状态向量x维度11：[cx,cy, cz, yaw, vx, vy, vz, vyaw, r, l, h]
  * cx/cy/cz：机器人中心坐标；vx/vy/vz：机器人速度；yaw：机器人偏航角；vyaw：偏航角速度
  * r：基准装甲板半径；l：侧板装甲板半径增量；h：侧板装甲板高度偏移
  */
@@ -27,14 +23,7 @@ ArmorEKF::ArmorEKF(){
  * @param init_h 侧板装甲板初始高度偏移（米）
  * @param P0_diag 初始协方差矩阵的对角元素
  */
-void ArmorEKF::init(const Eigen::Vector3d& p_armor_world,
-                    double orientation_yaw,
-                    int armor_num,
-                    double init_r,
-                    double init_l,
-                    double init_h,
-                    const Eigen::Matrix<double, 11, 1>& P0_diag)
-{
+void ArmorEKF::init(const Eigen::Vector3d& p_armor_world,double orientation_yaw, int armor_num, double init_r, double init_l, double init_h, const Eigen::Matrix<double, 11, 1>& P0_diag){
     armor_num_ = armor_num;      // 装甲板数量
     last_id_ = 0;                // 上一帧匹配的装甲板ID
     update_count_ = 0;           // 更新次数
@@ -45,8 +34,8 @@ void ArmorEKF::init(const Eigen::Vector3d& p_armor_world,
     double cy = p_armor_world(1) + init_r * std::sin(orientation_yaw);
     double cz = p_armor_world(2);
 
-    // 初始化状态向量：[cx, vx, cy, vy, cz, vz, yaw, vyaw, r, l, h]
-    x << cx, 0.0, cy, 0.0, cz, 0.0, orientation_yaw, 0.0, init_r, init_l, init_h;
+    // 初始化状态向量：[cx, cy, cz, yaw, vx, vy, vz, vyaw, r, l, h]
+    x << cx, cy, cz, orientation_yaw, 0.0, 0.0, 0.0, 0.0, init_r, init_l, init_h;
     // 初始化协方差矩阵（对角矩阵）
     P = P0_diag.asDiagonal();
 }
@@ -61,10 +50,10 @@ void ArmorEKF::predict(double dt) {
 
     // 1. 构建状态转移矩阵F（11x11）—— 匀速运动模型
     Eigen::Matrix<double, 11, 11> F = Eigen::Matrix<double, 11, 11>::Identity();
-    F(0, 1) = dt;  // cx += vx * dt
-    F(2, 3) = dt;  // cy += vy * dt
-    F(4, 5) = dt;  // cz += vz * dt
-    F(6, 7) = dt;  // yaw += vyaw * dt
+    F(0, 4) = dt;  // cx += vx * dt
+    F(1, 5) = dt;  // cy += vy * dt
+    F(2, 6) = dt;  // cz += vz * dt
+    F(3, 7) = dt;  // yaw += vyaw * dt
 
     // 2. 构建过程噪声协方差矩阵Q（分段白噪声模型）
     double accel_var_xy = 20.0;   // 水平方向加速度方差
@@ -83,26 +72,26 @@ void ArmorEKF::predict(double dt) {
 
     // x轴 (位置索引0，速度索引1)
     Q(0,0) = pos_corr * accel_var_xy;
-    Q(0,1) = vel_corr * accel_var_xy;
-    Q(1,0) = vel_corr * accel_var_xy;
-    Q(1,1) = acc_corr * accel_var_xy;
+    Q(0,4) = vel_corr * accel_var_xy;
+    Q(4,0) = vel_corr * accel_var_xy;
+    Q(4,4) = acc_corr * accel_var_xy;
 
-    // y轴 (位置索引2，速度索引3)
-    Q(2,2) = pos_corr * accel_var_xy;
-    Q(2,3) = vel_corr * accel_var_xy;
-    Q(3,2) = vel_corr * accel_var_xy;
-    Q(3,3) = acc_corr * accel_var_xy;
+    // y轴 (位置索引1，速度索引5)
+    Q(1,1) = pos_corr * accel_var_xy;
+    Q(1,5) = vel_corr * accel_var_xy;
+    Q(5,1) = vel_corr * accel_var_xy;
+    Q(5,5) = acc_corr * accel_var_xy;
 
-    // z轴 (位置索引4，速度索引5)
-    Q(4,4) = pos_corr * accel_var_z;
-    Q(4,5) = vel_corr * accel_var_z;
-    Q(5,4) = vel_corr * accel_var_z;
-    Q(5,5) = acc_corr * accel_var_z;
+    // z轴 (位置索引2，速度索引6)
+    Q(2,2) = pos_corr * accel_var_z;
+    Q(2,6) = vel_corr * accel_var_z;
+    Q(6,2) = vel_corr * accel_var_z;
+    Q(6,6) = acc_corr * accel_var_z;
 
-    // 偏航角 (索引6) 和偏航角速度 (索引7)
-    Q(6,6) = pos_corr * ang_accel_var;
-    Q(6,7) = vel_corr * ang_accel_var;
-    Q(7,6) = vel_corr * ang_accel_var;
+    // 偏航角 (索引3) 和偏航角速度 (索引7)
+    Q(3,3) = pos_corr * ang_accel_var;
+    Q(3,7) = vel_corr * ang_accel_var;
+    Q(7,3) = vel_corr * ang_accel_var;
     Q(7,7) = acc_corr * ang_accel_var;
 
     // 静态形状参数的过程噪声（小方差，缓慢变化）
@@ -112,7 +101,7 @@ void ArmorEKF::predict(double dt) {
 
     // 3. 状态预测（F×x），并归一化偏航角
     Eigen::Matrix<double, 11, 1> x_pred = F * x;
-    x_pred(6) = normalizeYaw(x_pred(6));
+    x_pred(3) = normalizeYaw(x_pred(3));
 
     // 4. 更新状态和协方差
     x = x_pred;
@@ -132,7 +121,7 @@ void ArmorEKF::update(const Eigen::Vector4d& z_obs) {
     double min_error = 1e10;  // 最小误差初始值
     for (int i = 0; i < armor_num_; ++i) {
         // 计算当前ID对应的装甲板偏航角（归一化）
-        double plate_yaw = normalizeYaw(x(6) + i * 2.0 * M_PI / armor_num_);
+        double plate_yaw = normalizeYaw(x(3) + i * 2.0 * M_PI / armor_num_);
         // 预测当前ID装甲板的位置
         Eigen::Vector3d pred_xyz = hArmorXyz(x, i);
         // 转换为球坐标（yaw/pitch/dist）
@@ -176,10 +165,9 @@ void ArmorEKF::update(const Eigen::Vector4d& z_obs) {
     Eigen::Matrix<double, 11, 4> K = P * H.transpose() * S.inverse(); // 卡尔曼增益
     Eigen::Matrix<double, 11, 1> dx = K * residual;      // 状态修正量
     x += dx;                                             // 状态修正
-    x(6) = normalizeYaw(x(6));                           // 偏航角归一化
+    x(3) = normalizeYaw(x(3));                           // 偏航角归一化
 
-   Eigen::Matrix<double, 11, 11> I = Eigen::Matrix<double, 11, 11>::Identity();
-    P = (I - K * H) * P * (I - K * H).transpose() + K * R * K.transpose(); // Joseph形式更新协方差，增强数值稳定性
+    P = (Eigen::Matrix<double, 11, 11>::Identity() - K * H) * P;
 
     // 步骤6：收敛判断（更新次数>5，且半径在合理范围）
     if (update_count_ > 5 && x(8) > 0.05 && x(8) < 0.5)
@@ -203,7 +191,7 @@ Eigen::Vector3d ArmorEKF::getArmorCenter() const {
     return hArmorXyz(x, last_id_);
 }
 
-// ==================== 私有成员函数实现 ====================
+// 私有成员函数实现 
 
 /**
  * @brief 观测模型：根据状态和装甲板ID计算装甲板中心坐标
@@ -213,7 +201,7 @@ Eigen::Vector3d ArmorEKF::getArmorCenter() const {
  */
 Eigen::Vector3d ArmorEKF::hArmorXyz(const Eigen::Matrix<double, 11, 1>& state, int id) const {
     // 计算当前装甲板的偏航角（机器人偏航角+ID偏移，归一化）
-    double plate_yaw = normalizeYaw(state(6) + id * 2.0 * M_PI / armor_num_);
+    double plate_yaw = normalizeYaw(state(3) + id * 2.0 * M_PI / armor_num_);
     // 判断是否为侧板装甲板（4装甲板时，1/3为侧板）
     bool is_side = (armor_num_ == 4) && (id == 1 || id == 3);
     
@@ -228,14 +216,14 @@ Eigen::Vector3d ArmorEKF::hArmorXyz(const Eigen::Matrix<double, 11, 1>& state, i
     // 计算装甲板高度（侧板=基准高度+偏移h）
     double height;
     if (is_side) {
-        height = state(4) + state(10);
+        height = state(2) + state(10);
     } else {
-        height = state(4);
+        height = state(2);
     }
     
     // 装甲板中心坐标（机器人中心 - 半径×方向向量）
     double armor_x = state(0) - radius * std::cos(plate_yaw);
-    double armor_y = state(2) - radius * std::sin(plate_yaw);
+    double armor_y = state(1) - radius * std::sin(plate_yaw);
     return {armor_x, armor_y, height};
 }
 
@@ -251,7 +239,7 @@ Eigen::Vector4d ArmorEKF::hFunc(const Eigen::Matrix<double, 11, 1>& state, int i
     // 转换为球坐标（yaw/pitch/dist）
     Eigen::Vector3d ypd = xyz2Ypd(armor_xyz);
     // 计算装甲板偏航角
-    double plate_yaw = normalizeYaw(state(6) + id * 2.0 * M_PI / armor_num_);
+    double plate_yaw = normalizeYaw(state(3) + id * 2.0 * M_PI / armor_num_);
     // 组合预测观测向量
     return {ypd(0), ypd(1), ypd(2), plate_yaw};
 }
@@ -264,7 +252,7 @@ Eigen::Vector4d ArmorEKF::hFunc(const Eigen::Matrix<double, 11, 1>& state, int i
  */
 Eigen::Matrix<double, 4, 11> ArmorEKF::hJacobian(const Eigen::Matrix<double, 11, 1>& state, int id) const {
     // 装甲板偏航角（归一化）
-    double plate_yaw = normalizeYaw(state(6) + id * 2.0 * M_PI / armor_num_);
+    double plate_yaw = normalizeYaw(state(3) + id * 2.0 * M_PI / armor_num_);
     // 判断是否为侧板装甲板
     bool is_side = (armor_num_ == 4) && (id == 1 || id == 3);
     // 装甲板半径
@@ -275,47 +263,32 @@ Eigen::Matrix<double, 4, 11> ArmorEKF::hJacobian(const Eigen::Matrix<double, 11,
         radius = state(8);
     }
 
-    // 构建装甲板坐标对状态的雅可比矩阵（3x11）
-    Eigen::Matrix<double, 3, 11> H_xyz = Eigen::Matrix<double, 3, 11>::Zero();
+    
+    // 预计算三角函数和增量
+    double s_yaw = std::sin(plate_yaw);
+    double c_yaw = std::cos(plate_yaw);
+    double d_l   = is_side ? -c_yaw : 0.0;
+    double d_l_y = is_side ? -s_yaw : 0.0;
+    double d_h   = is_side ? 1.0 : 0.0;
 
-    // 对cx的偏导数
-    H_xyz(0,0) = 1.0;
-    // 对yaw的偏导数（解决旋转偏心问题）
-    H_xyz(0,6) =  radius * std::sin(plate_yaw);
-    // 对r的偏导数
-    H_xyz(0,8) = -std::cos(plate_yaw);
-    // 侧板时，对l的偏导数
-    if (is_side) H_xyz(0,9) = -std::cos(plate_yaw);
-
-    // 对cy的偏导数
-    H_xyz(1,2) = 1.0;
-    // 对yaw的偏导数
-    H_xyz(1,6) = -radius * std::cos(plate_yaw);
-    // 对r的偏导数
-    H_xyz(1,8) = -std::sin(plate_yaw);
-    // 侧板时，对l的偏导数
-    if (is_side) H_xyz(1,9) = -std::sin(plate_yaw);
-
-    // 对cz的偏导数
-    H_xyz(2,4) = 1.0;
-    // 侧板时，对h的偏导数
-    if (is_side) H_xyz(2,10) = 1.0;
-
-    // 计算球坐标转换的雅可比矩阵（3x3）
-    Eigen::Vector3d armor_xyz = hArmorXyz(state, id);
-    Eigen::Matrix<double, 3, 3> J_ypd = xyz2YpdJacobian(armor_xyz);
-
-    // 组合最终雅可比矩阵（4x11）
+    // 状态向量: [cx, cy, cz, yaw, vx, vy, vz, vyaw, r, l, h]
+    Eigen::Matrix<double, 3, 11> H_xyz;
+    H_xyz << 
+        1.0, 0.0, 0.0,  radius * s_yaw, 0.0, 0.0, 0.0, 0.0, -c_yaw,   d_l,   0.0,
+        0.0, 1.0, 0.0, -radius * c_yaw, 0.0, 0.0, 0.0, 0.0, -s_yaw, d_l_y,   0.0,
+        0.0, 0.0, 1.0,             0.0, 0.0, 0.0, 0.0, 0.0,    0.0,   0.0,   d_h;
+    
+    // 观测模型的雅可比矩阵H（4x11）
     Eigen::Matrix<double, 4, 11> H = Eigen::Matrix<double, 4, 11>::Zero();
-    // 前3行：球坐标雅可比×装甲板坐标雅可比
-    H.block<3,11>(0,0) = J_ypd * H_xyz;
-    // 第4行：装甲板偏航角直接对应状态的yaw
-    H(3,6) = 1.0;
+    // 前3行对应yaw_cam、pitch_cam、dist的偏导数（通过链式法则计算）
+    H.block<3,11>(0,0) = xyz2YpdJacobian(hArmorXyz(state, id)) * H_xyz;
+    // 装甲板偏航角直接对应状态的yaw
+    H(3,3) = 1.0;
     return H;
 }
 
 
-// ==================== 静态工具函数 ====================
+// 静态工具函数
 
 /**
  * @brief 角度归一化（限制在-π ~ π）

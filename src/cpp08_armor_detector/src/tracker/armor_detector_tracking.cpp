@@ -23,11 +23,11 @@ bool ArmorDetector::updateTracking(const Eigen::Vector4d& z_obs,
     // [cx, vx, cy, vy, cz, vz, yaw, vyaw, r, l, h]
     // 位置/速度/角度初始不确定性大，几何参数(r/l/h)初始不确定性小
     Eigen::Matrix<double, 11, 1> initP;
-    initP << 100.0, 100.0,  // cx, vx
-             100.0, 100.0,  // cy, vy
-             100.0, 100.0,  // cz, vz
-             10.0, 10.0,    // yaw, vyaw
-             0.01, 0.01, 0.01;  // r, l, h
+    initP << 100.0, 100.0, 100.0, // x, y, z 的初始不确定度
+             10.0,                // yaw 的初始不确定度
+             100.0, 100.0, 100.0, // vx, vy, vz 速度的不确定度
+             10.0,                // vyaw 角速度不确定度
+             0.01, 0.01, 0.01;    // r, l, h 几何参数的不确定度
     
     // 初始化EKF：初始半径260mm，侧板增量和高度偏移初始为0
     ekf.init(armor_world, z_obs(3), 4, 0.26, 0.0, 0.0, initP);

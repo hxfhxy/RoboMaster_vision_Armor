@@ -1,4 +1,7 @@
 #include "cpp08_armor_detector/detector/armor_detector.hpp"
+
+//这里都是传统识别，已没用了，后续可以删除
+
 cv::Mat ArmorDetector::preprocess(cv::Mat img)
 {
     // 预处理常量设置

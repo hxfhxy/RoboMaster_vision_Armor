@@ -2,17 +2,12 @@
 #define KALMAN_FILTER_HPP
 
 #include <Eigen/Dense>
-
 /**
- * @brief 装甲板扩展卡尔曼滤波器类（基于Eigen的全耦合EKF架构）
- * 状态向量维度11：[cx, vx, cy, vy, cz, vz, yaw, vyaw, r, l, h]
- *  - cx/cy/cz: 机器人中心坐标 (m)
- *  - vx/vy/vz: 机器人速度 (m/s)
- *  - yaw: 机器人偏航角 (rad)
- *  - vyaw: 机器人偏航角速度 (rad/s)
- *  - r: 基准装甲板半径 (m)
- *  - l: 侧板装甲板半径增量 (m)
- *  - h: 侧板装甲板高度偏移 (m)
+ * @brief 装甲板扩展卡尔曼滤波器类（基于Eigen的高级架构）
+ * 状态向量维度11：[x, y, z, yaw, vx, vy, vz, vyaw, r1, r2, dz]
+ * - 索引 0~3: 机器人位置与偏航角 (x, y, z, yaw)
+ * - 索引 4~7: 机器人线速度与角速度 (vx, vy, vz, vyaw)
+ * - 索引 8~10: 几何参数 (基准半径, 侧板半径增量, 侧板高度差)
  */
 class ArmorEKF {
 public:

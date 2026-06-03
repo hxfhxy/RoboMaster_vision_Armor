@@ -18,6 +18,7 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <visualization_msgs/msg/marker.hpp>
 #include "cpp08_armor_detector/solver/trajectory_solver.hpp"
+#include <visualization_msgs/msg/marker_array.hpp>
 
 #include <Eigen/Core>
 #include <Eigen/Geometry> 
@@ -25,7 +26,7 @@
 class ArmorDetector {
 public:
     std::shared_ptr<tf2_ros::TransformBroadcaster> tf_armor_broadcaster_;
-    void setMarkerPublisher(rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr pub) { 
+    void setMarkerPublisher(rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr pub) { 
         marker_pub_ = pub; 
     }
     void setArmorTFBroadcaster(std::shared_ptr<tf2_ros::TransformBroadcaster> broadcaster) {
@@ -142,7 +143,7 @@ private:
     float target_pitch_ = 0.0f;
     const float BULLET_SPEED = 15.0f;
 
-    rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr marker_pub_; // 可视化 Marker 发布者
+    rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_pub_;// 可视化 Marker 发布者
     TrajectorySolver trajectory_solver_;// 弹道计算器对象
     
     // 新增：数字分类逻辑

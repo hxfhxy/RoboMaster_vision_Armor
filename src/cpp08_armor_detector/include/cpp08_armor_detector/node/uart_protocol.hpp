@@ -43,7 +43,7 @@ typedef struct PACKED {
     uint8_t target_valid;     // 目标有效位：0=无效，1=有效
     //uint8_t armor_number;          // 识别到的装甲板号码（0-9），255表示未识别到有效号码
     uint8_t Frame_Tail;            // 帧尾：0xFF (1字节)
-    // 总字节数：1+4+4+1=10字节
+    // 总字节数：1+4+4+1+1=11字节
 } Manifold_UART_Rx_Data;
 
 // 发送数据到电控
